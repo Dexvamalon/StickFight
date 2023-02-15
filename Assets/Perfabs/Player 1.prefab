@@ -612,7 +612,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3489222162509290998}
-  m_LocalRotation: {x: 0.49388117, y: -0, z: -0, w: 0.8695294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -633,7 +633,7 @@ Transform:
   - {fileID: 57613615475194142}
   m_Father: {fileID: 1660953589966276709}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 59.192, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3489222162509291000
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 3489222162541293757}
   - component: {fileID: 3489222162541293759}
   - component: {fileID: 3489222162541293756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -715,7 +715,7 @@ Transform:
   m_GameObject: {fileID: 3489222162541293748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 22, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1660953589966276709}
@@ -793,7 +793,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6161467663929509837}
   - component: {fileID: 2304924960087162211}
-  m_Layer: 0
+  - component: {fileID: 3489222161668569684}
+  m_Layer: 6
   m_Name: HurtBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,12 +824,26 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3595650220706717139}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3489222161668569684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595650220706717139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8939132c91864fb4eb28dabbc31047c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  initialStocks: 3
 --- !u!1 &4788314775894484244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1497,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3547300520791883974}
   - component: {fileID: 2799614357818354678}
-  m_Layer: 0
+  - component: {fileID: 3489222161668569685}
+  m_Layer: 6
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1512,9 +1528,23 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8581377996785968910}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3489222161668569685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581377996785968910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615aff234baaff44b800f0746c0d8cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  playerLayers: 0600000007000000

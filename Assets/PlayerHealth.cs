@@ -10,8 +10,10 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if (health < 0)
+        Debug.Log(gameObject.name + " took " + damage + " damage");
+        if (health <= 0)
         {
+            Debug.Log(gameObject.name + " is dead");
             //todo //set stock and stuff.
         }
     }

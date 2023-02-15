@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _sr;
 
+    [SerializeField] private bool isPlayer1 = true;
+
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -30,7 +32,10 @@ public class PlayerMovement : MonoBehaviour
         coolDowns = GetComponent<CoolDowns>();
 
         playerControls = new PlayerControls();
-        playerControls.Player.Enable();
+        if(isPlayer1)
+        {   playerControls.Player.Enable();  }
+        else
+        {   playerControls.Player2.Enable(); }
         playerControls.Player.Dash.performed += Dash;
     }
 
