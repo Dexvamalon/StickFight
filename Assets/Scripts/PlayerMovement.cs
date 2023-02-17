@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,10 +34,13 @@ public class PlayerMovement : MonoBehaviour
 
         playerControls = new PlayerControls();
         if(isPlayer1)
-        {   playerControls.Player.Enable();  }
+        {   playerControls.Player.Enable();
+            playerControls.Player.Dash.performed += Dash;
+        }
         else
-        {   playerControls.Player2.Enable(); }
-        playerControls.Player.Dash.performed += Dash;
+        {   playerControls.Player2.Enable();
+            playerControls.Player2.Dash.performed += Dash;
+        }
     }
 
     private void FixedUpdate()
@@ -52,8 +56,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        playerControls.Player.Move.ReadValue<Vector2>();
-        Vector2 inputVector = playerControls.Player.Move.ReadValue<Vector2>();
+        Vector2 inputVector;
+        if (isPlayer1)
+        {
+            playerControls.Player.Move.ReadValue<Vector2>();
+            inputVector = playerControls.Player.Move.ReadValue<Vector2>();
+        }
+        else
+        {
+            playerControls.Player2.Move.ReadValue<Vector2>();
+            inputVector = playerControls.Player2.Move.ReadValue<Vector2>();
+        }
+
         if (inputVector != new Vector2(0, 0))
         {
             if (!isDashing)
