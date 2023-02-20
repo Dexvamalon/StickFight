@@ -9,12 +9,19 @@ public class sceenManagement : MonoBehaviour
 
     private bool _isPressing;
     private bool _playerHere = false;
+    public GameObject interactIcon;
+
+    private void Start()
+    {
+        interactIcon.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
         {
             _playerHere = true;
+            OpenInteractableIcon();
         }
     }
 
@@ -23,6 +30,7 @@ public class sceenManagement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _playerHere = false;
+            CloseInteractableIcon();
         }
     }
 
@@ -37,4 +45,15 @@ public class sceenManagement : MonoBehaviour
         }
     }
 
+    public void OpenInteractableIcon()
+    {
+        interactIcon.SetActive(true);
+
+    }
+
+    public void CloseInteractableIcon()
+    {
+        interactIcon.SetActive(false);
+
+    }
 }
