@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //add way to start attack and send attack event.
     [Header("Refrences")]
     CoolDowns coolDowns;
     [Header ("Other")]
@@ -25,6 +26,22 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private bool isPlayer1 = true;
 
+    private Vector2 inputVector;
+
+    [SerializeField] private float movementEventSpeed = 0.1f;
+
+
+    //////////////////////////////////////////////////////////
+                           //Events//
+    //////////////////////////////////////////////////////////
+    
+    public event Action OnAttack;
+    public event Action OnNeutralAttack;
+    public event Action<bool> OnRunning;
+    public event Action<Vector2> OnFacing;
+    public event Action OnDash;
+
+
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -36,27 +53,24 @@ public class PlayerMovement : MonoBehaviour
         if(isPlayer1)
         {   playerControls.Player.Enable();
             playerControls.Player.Dash.performed += Dash;
+            playerControls.Player.Attack.performed += AttackPerformed;
         }
         else
         {   playerControls.Player2.Enable();
             playerControls.Player2.Dash.performed += Dash;
+            playerControls.Player2.Attack.performed += AttackPerformed;
         }
     }
 
     private void FixedUpdate()
     {
         Move();
-        /*if(isDashing && playerRb2d.velocity == new Vector2(0,0)) // todo fix this
-        {
-            isDashing = false;
-        }*/
 
         _sr.sortingOrder = -Mathf.FloorToInt(transform.position.z * 100);
     }
 
     public void Move()
     {
-        Vector2 inputVector;
         if (isPlayer1)
         {
             playerControls.Player.Move.ReadValue<Vector2>();
@@ -80,11 +94,22 @@ public class PlayerMovement : MonoBehaviour
             if (inputVector.x != attackDir.x)
             {
                 attackDir = new Vector2(inputVector.x, 0);
+                OnFacing?.Invoke(attackDir);
             }
             else if (inputVector.y != attackDir.y)
             {
                 attackDir = new Vector2(0, inputVector.y);
+                OnFacing?.Invoke(attackDir);
             }
+        }
+
+        if(Mathf.Abs(playerRb.velocity.x) > movementEventSpeed || Mathf.Abs(playerRb.velocity.z) > movementEventSpeed)
+        {
+            OnRunning?.Invoke(true);
+        }
+        else
+        {
+            OnRunning?.Invoke(false);
         }
     }
 
@@ -98,7 +123,21 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        OnDash?.Invoke();
         StartCoroutine(DashCalculator());
+    }
+
+    private void AttackPerformed(InputAction.CallbackContext context)
+    {
+        if(inputVector == new Vector2(0, 0))
+        {
+            OnNeutralAttack?.Invoke();
+        }
+        else
+        {
+            OnAttack?.Invoke();
+        }
+        
     }
 
     private IEnumerator DashCalculator()

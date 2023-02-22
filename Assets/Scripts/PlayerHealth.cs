@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float health = 100;
-    [SerializeField] private int initialStocks = 3;
+    //[SerializeField] private int initialStocks = 3;
 
     public void TakeDamage(float damage)
     {
@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log(gameObject.name + " is dead");
             //todo //set stock and stuff.
+            //fire of losing swor event osmth
         }
     }
 }
