@@ -1473,7 +1473,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Animator Controller
+  m_Name: PlayerAnimationController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Is facing up
@@ -1481,43 +1481,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Is facing down
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Has sword
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Dodge
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Neutral attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Is running
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1596,32 +1596,32 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -8507741378388424259}
-    second:
-    - {fileID: 5933488670048789670}
-  - first: {fileID: 5010905331050696087}
-    second:
-    - {fileID: 6815381738842534070}
-  - first: {fileID: -6252353569811702585}
-    second:
-    - {fileID: -3733298982793031693}
-  - first: {fileID: -4340992199865551880}
+  - first: {fileID: 4559868476944912580}
     second: []
+  - first: {fileID: 6140123368209355395}
+    second:
+    - {fileID: 2952867691032737824}
+  - first: {fileID: 1296208241680894387}
+    second:
+    - {fileID: 3454654105325554564}
+  - first: {fileID: -6527306703447656656}
+    second:
+    - {fileID: -1125437892628082778}
   - first: {fileID: -4330800233686728963}
     second:
     - {fileID: 6505592647847062076}
     - {fileID: -8544110619694809719}
-  - first: {fileID: -6527306703447656656}
-    second:
-    - {fileID: -1125437892628082778}
-  - first: {fileID: 1296208241680894387}
-    second:
-    - {fileID: 3454654105325554564}
-  - first: {fileID: 6140123368209355395}
-    second:
-    - {fileID: 2952867691032737824}
-  - first: {fileID: 4559868476944912580}
+  - first: {fileID: -4340992199865551880}
     second: []
+  - first: {fileID: -6252353569811702585}
+    second:
+    - {fileID: -3733298982793031693}
+  - first: {fileID: 5010905331050696087}
+    second:
+    - {fileID: 6815381738842534070}
+  - first: {fileID: -8507741378388424259}
+    second:
+    - {fileID: 5933488670048789670}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -280, y: 100, z: 0}
   m_EntryPosition: {x: -280, y: 170, z: 0}
@@ -1867,7 +1867,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 139be6a10d7234879acb581575d82b0c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -3194,7 +3194,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 70a6a4d34a951469c99b4523e033a3cf, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
