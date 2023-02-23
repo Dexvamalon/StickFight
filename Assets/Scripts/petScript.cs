@@ -44,6 +44,7 @@ public class petScript : MonoBehaviour
         if (_playerHere && _isPressing)
         {
             PetIcon.SetActive(true);
+            interactIcon.SetActive(false);
         }
     }
 
