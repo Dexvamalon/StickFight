@@ -13,10 +13,8 @@ public class DamageDealer : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Break();
         if(collision.gameObject.layer == playerLayers[0] || collision.gameObject.layer == playerLayers[1])
         {
-            Debug.Break();
             if (collision.gameObject.GetComponent<PlayerHealth>() != null && otherHealth == null)
             {
                 otherHealth = collision.gameObject.GetComponent<PlayerHealth>();

@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashTime = 1f;
     private Vector2 facingDir = new Vector2(0,-1);
     private Vector2 attackDir = new Vector2(0, -1);
-    private bool isDashing = false;
     [SerializeField] private float defaultDrag = 20f;
     [SerializeField] private float dashDrag = 5f;
 
@@ -84,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputVector != new Vector2(0, 0))
         {
-            if (!isDashing)
+            if (coolDowns.canMove)
             {
                 playerRb.velocity = new Vector3(inputVector.x * movementSpeed, 0.0f, inputVector.y * movementSpeed);
             }
@@ -115,26 +114,41 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context) // todo add dash cooldown, add input buffer.
     {
-        Debug.Log(context);
-        Debug.Log("Dashed! " + context.phase);
+        //Debug.Log(context);
+        //Debug.Log("Dashed! " + context.phase);
         
-        if (!coolDowns.canDash || isDashing)
+        if (!coolDowns.canDash)
         {
             return;
         }
 
+        coolDowns.DashCoolDown();
         OnDash?.Invoke();
         StartCoroutine(DashCalculator());
     }
 
+    int x = 0;
     private void AttackPerformed(InputAction.CallbackContext context)
     {
+        
         if(inputVector == new Vector2(0, 0))
         {
+            if (!coolDowns.canNeutralAttack)
+            {
+                return;
+            }
+            coolDowns.NeutralAttackCoolDown();
             OnNeutralAttack?.Invoke();
+            x++;
+            Debug.Log(x);
         }
         else
         {
+            if (!coolDowns.canAttack)
+            {
+                return;
+            }
+            coolDowns.AttackCoolDown();
             OnAttack?.Invoke();
         }
         
@@ -144,13 +158,9 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRb.velocity = new Vector3(facingDir.x * dashSpeed, 0.0f, facingDir.y * dashSpeed);
         playerRb.drag = dashDrag;
-        isDashing = true;
 
         yield return new WaitForSeconds(dashTime);
 
         playerRb.drag = defaultDrag;
-        isDashing = false;
-
-        coolDowns.DashCoolDown();
     }
 }
