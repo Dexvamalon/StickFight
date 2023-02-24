@@ -27,11 +27,13 @@ public class PlayerGraphics : MonoBehaviour
     private void PlayerMovement_OnAttack()
     {
         playerAnimator.SetTrigger("Attack");
+        playerAnimator.SetBool("Is running", false);
     }
 
     private void PlayerMovement_OnNeutralAttack()
     {
         playerAnimator.SetTrigger("Neutral attack");
+        playerAnimator.SetBool("Is running", false);
     }
 
     private void PlayerMovement_OnRunning(bool active)
@@ -65,6 +67,7 @@ public class PlayerGraphics : MonoBehaviour
     private void PlayerMovement_OnDash()
     {
         playerAnimator.SetTrigger("Dodge");
+        playerAnimator.SetBool("Is running", false);
     }
 
 }

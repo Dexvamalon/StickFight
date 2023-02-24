@@ -101,11 +101,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_holes_0
+      name: Cone_Char_Side_0
       rect:
         serializedVersion: 2
         x: 833
@@ -126,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_1
+      name: Cone_Char_Side_1
       rect:
         serializedVersion: 2
         x: 2130
@@ -147,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_2
+      name: Cone_Char_Side_2
       rect:
         serializedVersion: 2
         x: 1447
@@ -168,10 +180,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_3
+      name: Cone_Char_Side_3
       rect:
         serializedVersion: 2
-        x: 1787
+        x: 1794
         y: 1170
         width: 343
         height: 384
@@ -189,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_4
+      name: Cone_Char_Side_4
       rect:
         serializedVersion: 2
         x: 1449
@@ -210,10 +222,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_5
+      name: Cone_Char_Side_5
       rect:
         serializedVersion: 2
-        x: 1787
+        x: 1789
         y: 729
         width: 343
         height: 441
@@ -231,10 +243,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_6
+      name: Cone_Char_Side_6
       rect:
         serializedVersion: 2
-        x: 2132
+        x: 2134
         y: 474
         width: 499
         height: 520
@@ -252,11 +264,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_7
+      name: Cone_Char_Side_7
       rect:
         serializedVersion: 2
         x: 2126
-        y: 7
+        y: 5
         width: 508
         height: 467
       alignment: 9
@@ -273,11 +285,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_8
+      name: Cone_Char_Side_8
       rect:
         serializedVersion: 2
         x: 952
-        y: 468
+        y: 465
         width: 496
         height: 502
       alignment: 9
@@ -294,11 +306,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_9
+      name: Cone_Char_Side_9
       rect:
         serializedVersion: 2
         x: 952
-        y: 13
+        y: 5
         width: 499
         height: 452
       alignment: 9
@@ -315,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_holes_10
+      name: Cone_Char_Side_10
       rect:
         serializedVersion: 2
         x: 1451
@@ -346,17 +358,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Character_holes_0: -1857922004
-      Character_holes_9: 1991421554
-      Character_holes_3: -490526912
-      Character_holes_4: 1465025424
-      Character_holes_10: 260939996
-      Character_holes_7: -1230432938
-      Character_holes_8: -476136464
-      Character_holes_2: 682212461
-      Character_holes_1: 777875376
-      Character_holes_6: -265867553
-      Character_holes_5: 311592190
+      Cone_Char_Side_5: 311592190
+      Cone_Char_Side_9: 1991421554
+      Cone_Char_Side_3: -490526912
+      Cone_Char_Side_6: -265867553
+      Cone_Char_Side_2: 682212461
+      Cone_Char_Side_10: 260939996
+      Cone_Char_Side_1: 777875376
+      Cone_Char_Side_7: -1230432938
+      Cone_Char_Side_8: -476136464
+      Cone_Char_Side_4: 1465025424
+      Cone_Char_Side_0: -1857922004
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

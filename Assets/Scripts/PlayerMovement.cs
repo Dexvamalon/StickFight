@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerControls playerControls;
     [SerializeField] private float movementSpeed = 1f;
+    [SerializeField] private float coolDownSpeed = 1f;
+    private bool slowMove = true;
     [SerializeField] private float dashSpeed = 1f;
     [SerializeField] private float dashTime = 1f;
     private Vector2 facingDir = new Vector2(0,-1);
@@ -87,6 +89,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerRb.velocity = new Vector3(inputVector.x * movementSpeed, 0.0f, inputVector.y * movementSpeed);
             }
+            else if (slowMove)
+            {
+                playerRb.velocity = new Vector3(inputVector.x * movementSpeed * coolDownSpeed, 0.0f, inputVector.y * movementSpeed * coolDownSpeed);
+            }
 
             facingDir = inputVector;
 
@@ -156,11 +162,13 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator DashCalculator()
     {
+        slowMove = false;
         playerRb.velocity = new Vector3(facingDir.x * dashSpeed, 0.0f, facingDir.y * dashSpeed);
         playerRb.drag = dashDrag;
 
         yield return new WaitForSeconds(dashTime);
 
+        slowMove = true;
         playerRb.drag = defaultDrag;
     }
 }

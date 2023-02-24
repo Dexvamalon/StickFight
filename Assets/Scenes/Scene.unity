@@ -954,23 +954,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000128860}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1018483118 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3489222162509290998, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-  m_PrefabInstance: {fileID: 3489222161668569681}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1018483120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018483118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858391d7e984b3a44868766fbf0cacae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1307469322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,54 +1494,6 @@ PrefabInstance:
     - target: {fileID: 3489222162541293751, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: MoveCdAfterDash
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: dashCdAfterDash
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: MoveCdAfterAttack
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: attackCdAfterDash
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: dashCdAfterAttack
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: MoveCdAfterNeutral
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: dashCdAfterNeutral
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: neutralCdAfterDash
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: attackCdAfterAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: attackCdAfterNeutral
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: neutralCdAfterAttack
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3489222162541293757, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: neutralCdAfterNeutral
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
