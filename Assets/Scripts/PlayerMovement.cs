@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     //////////////////////////////////////////////////////////
-                           //Events//
+                     //Events For animator//
     //////////////////////////////////////////////////////////
     
     public event Action OnAttack;
@@ -42,6 +42,23 @@ public class PlayerMovement : MonoBehaviour
     public event Action<Vector2> OnFacing;
     public event Action OnDash;
 
+    //////////////////////////////////////////////////////////
+            //Delegates and stuff for input buffer//
+    //////////////////////////////////////////////////////////
+
+    private Action inputBufferPointer;
+    private IEnumerator curentInputBuffer;
+
+    private bool waiting = false;
+
+    [Header("Input buffers, for smother controls. It makes you able to press earlier than you can execute the input so that the input gets executed later")]
+    [SerializeField] private float neutralAttackBuffer = 0.1f;
+    [SerializeField] private float attackBuffer = 0.1f;
+    [SerializeField] private float dashBuffer = 0.1f;
+
+    //////////////////////////////////////////////////////////
+                            //Code//
+    //////////////////////////////////////////////////////////
 
     private void Awake()
     {
@@ -125,15 +142,16 @@ public class PlayerMovement : MonoBehaviour
         
         if (!coolDowns.canDash)
         {
-            return;
+            BufferCoroutineStarter(dashBuffer);
+            inputBufferPointer = DashChecker;
+            StartCoroutine(FrameChecker());
         }
-
-        coolDowns.DashCoolDown();
-        OnDash?.Invoke();
-        StartCoroutine(DashCalculator());
+        else
+        {
+            StartDash();
+        }
     }
 
-    int x = 0;
     private void AttackPerformed(InputAction.CallbackContext context)
     {
         
@@ -141,23 +159,97 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!coolDowns.canNeutralAttack)
             {
-                return;
+                BufferCoroutineStarter(neutralAttackBuffer);
+                inputBufferPointer = NeutralAttackChecker;
+                StartCoroutine(FrameChecker());
             }
-            coolDowns.NeutralAttackCoolDown();
-            OnNeutralAttack?.Invoke();
-            x++;
-            Debug.Log(x);
+            else
+            {
+                NeutralAttack();
+            }
         }
         else
         {
             if (!coolDowns.canAttack)
             {
-                return;
+                BufferCoroutineStarter(attackBuffer);
+                inputBufferPointer = AttackChecker;
+                StartCoroutine(FrameChecker());
             }
-            coolDowns.AttackCoolDown();
-            OnAttack?.Invoke();
+            else
+            {
+                Attack();
+            }
         }
         
+    }
+
+    private void BufferCoroutineStarter(float buf)
+    {
+        waiting = true;
+
+        if(curentInputBuffer != null)
+        {
+            StopCoroutine(curentInputBuffer);
+        }
+        curentInputBuffer = InputBuffer(buf);
+        StartCoroutine(curentInputBuffer);
+    }
+
+    private IEnumerator InputBuffer(float buffer)
+    {
+
+        yield return new WaitForSeconds(buffer);
+
+        waiting = false;
+    }
+
+    private IEnumerator FrameChecker()
+    {
+        while (waiting)
+        {
+            inputBufferPointer();
+            yield return null;
+        }
+    }
+
+    private void AttackChecker() {
+        if (coolDowns.canAttack) {
+            waiting = false;
+            Attack();
+        }
+    }
+
+    private void NeutralAttackChecker() {
+        if (coolDowns.canNeutralAttack) {
+            waiting = false;
+            NeutralAttack();    
+        }
+    }
+
+    private void DashChecker() {
+        if (coolDowns.canDash) {
+            waiting = false;
+            StartDash();
+        }
+    }
+    private void NeutralAttack()
+    {
+        coolDowns.NeutralAttackCoolDown();
+        OnNeutralAttack?.Invoke();
+    }
+
+    private void Attack()
+    {
+        coolDowns.AttackCoolDown();
+        OnAttack?.Invoke();
+    }
+
+    private void StartDash()
+    {
+        coolDowns.DashCoolDown();
+        OnDash?.Invoke();
+        StartCoroutine(DashCalculator());
     }
 
     private IEnumerator DashCalculator()
