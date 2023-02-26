@@ -45,6 +45,14 @@ public class PlayerSpriteController : MonoBehaviour
 
         parentOrderInLayer = parentSpriteRenderer.sortingOrder;
         spriteRenderer.sortingOrder = parentOrderInLayer + orderInLayer;
+
+
+        List<Sprite>[] directions = { skinDown, skinUp, skinSide };
+        if (spriteRenderer.sprite != directions[spriteIndex][skinIndex])
+        {
+            Debug.Log(directions[spriteIndex][skinIndex]);
+        }
+        spriteRenderer.sprite = directions[spriteIndex][skinIndex];
     }
 
 }
