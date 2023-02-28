@@ -61,7 +61,15 @@ public class PlayerGraphics : MonoBehaviour
         {
             playerAnimator.SetBool("Is facing down", true);
         }
-            
+        else if (facingDir.x == 1)
+        {
+            transform.root.localScale = new Vector3(1, 1, 1); 
+        }
+        else if (facingDir.x == -1)
+        {
+            transform.root.localScale = new Vector3(-1, 1, 1);
+        }
+
     }
 
     private void PlayerMovement_OnDash()
