@@ -15,6 +15,8 @@ public class PlayerSpriteController : MonoBehaviour
 
     private int skinIndex = 0;
 
+    [SerializeField] bool isPartOfSkin = true;
+
 
     private int orderInLayer = 0;
     private int parentOrderInLayer;
@@ -25,11 +27,14 @@ public class PlayerSpriteController : MonoBehaviour
 
     private void Start()
     {
-        List<Sprite>[] directions = { skinDown, skinUp, skinSide };
-
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = directions[spriteIndex][skinIndex];
-        Debug.Log(spriteRenderer.sprite);
+
+        if(isPartOfSkin)
+        {
+            List<Sprite>[] directions = { skinDown, skinUp, skinSide };
+            spriteRenderer.sprite = directions[spriteIndex][skinIndex];
+            Debug.Log(spriteRenderer.sprite);
+        }
 
         parentSpriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
         orderInLayer = spriteRenderer.sortingOrder;
@@ -46,6 +51,10 @@ public class PlayerSpriteController : MonoBehaviour
         parentOrderInLayer = parentSpriteRenderer.sortingOrder;
         spriteRenderer.sortingOrder = parentOrderInLayer + orderInLayer;
 
+        if(!isPartOfSkin)
+        {
+            return;
+        }
 
         List<Sprite>[] directions = { skinDown, skinUp, skinSide };
         if (spriteRenderer.sprite != directions[spriteIndex][skinIndex])
