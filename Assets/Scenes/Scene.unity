@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 373364858}
   - component: {fileID: 373364857}
   - component: {fileID: 373364856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 435468787}
   - component: {fileID: 435468789}
   - component: {fileID: 435468788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 690587984}
   - component: {fileID: 690587983}
   - component: {fileID: 690587982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 700473169}
   - component: {fileID: 700473171}
   - component: {fileID: 700473170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0b54d21f75e4ad29221cebb45dd79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLayers: 
+  playerLayers: 0600000007000000
 --- !u!136 &824047513
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1517,7 +1517,7 @@ GameObject:
   - component: {fileID: 969020439}
   - component: {fileID: 969020438}
   - component: {fileID: 969020437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,7 +1614,7 @@ GameObject:
   - component: {fileID: 1000128862}
   - component: {fileID: 1000128864}
   - component: {fileID: 1000128863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2479,7 +2479,7 @@ GameObject:
   - component: {fileID: 1572210390}
   - component: {fileID: 1572210392}
   - component: {fileID: 1572210391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3083,7 +3083,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1808697259}
   - component: {fileID: 1808697258}
-  m_Layer: 0
+  - component: {fileID: 1808697260}
+  m_Layer: 9
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3112,7 +3113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808697257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3122,6 +3123,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1808697260
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808697257}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 20
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &1818055034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,7 +3295,7 @@ GameObject:
   - component: {fileID: 1970214938}
   - component: {fileID: 1970214937}
   - component: {fileID: 1970214936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3372,7 +3389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2044181026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvisibleWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3631,10 +3648,6 @@ PrefabInstance:
     - target: {fileID: 3489222162541293751, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8581377996785968910, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
-      propertyPath: m_TagString
-      value: ActivatingAttack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
