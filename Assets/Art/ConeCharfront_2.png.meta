@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 18853c1b6d1074465889e12af5bb3f53
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_0
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 973
+        width: 608
+        height: 581
+      alignment: 9
+      pivot: {x: 0.53404, y: 0.26591262}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dda30b2666a54544902c2d5ec4c5e54
+      internalID: -1857922004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_1
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 1073
+        width: 558
+        height: 475
+      alignment: 9
+      pivot: {x: 0.51059693, y: 0.7365296}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c086cee4e8a545eaa9ea7d02806491e
+      internalID: 777875376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_2
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 1175
+        width: 340
+        height: 379
+      alignment: 9
+      pivot: {x: 0.6826147, y: 0.6950275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8c4603946934be6b2260a40ab4446d
+      internalID: 682212461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_3
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 1170
+        width: 343
+        height: 384
+      alignment: 9
+      pivot: {x: 0.3362215, y: 0.70788735}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e5ad6d324b84595b2137b1a064713b
+      internalID: -490526912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_4
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 726
+        width: 335
+        height: 444
+      alignment: 9
+      pivot: {x: 0.5176514, y: 0.79965734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078a3dd0145cd4dcc9aca637db5d6f58
+      internalID: 1465025424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_5
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 729
+        width: 343
+        height: 441
+      alignment: 9
+      pivot: {x: 0.49137962, y: 0.8084003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c1e8f480b174f89bfd9936080d3f3e
+      internalID: 311592190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_6
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 474
+        width: 499
+        height: 520
+      alignment: 9
+      pivot: {x: 0.41704845, y: 0.63645923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a212ea5d56d947d686d25601ef50bb1
+      internalID: -265867553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_7
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 5
+        width: 508
+        height: 467
+      alignment: 9
+      pivot: {x: 0.40687767, y: 0.7975613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cfec6444be544ed838fd4e19ae29b5
+      internalID: -1230432938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_8
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 468
+        width: 496
+        height: 502
+      alignment: 9
+      pivot: {x: 0.571531, y: 0.66491103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0907c41a0d4fe45498d3fb0d50ed72aa
+      internalID: -476136464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_9
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 13
+        width: 499
+        height: 452
+      alignment: 9
+      pivot: {x: 0.565176, y: 0.80743617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4638bccbe426d49aa9b03e31a128ac4a
+      internalID: 1991421554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cone_Char_Front_2_10
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 5
+        width: 675
+        height: 724
+      alignment: 9
+      pivot: {x: 0.44743744, y: 0.2958134}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93051b40cb67b40bf81d7cefe5a4d7a0
+      internalID: 260939996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cone_Char_Front_2_0: -1857922004
+      Cone_Char_Front_2_8: -476136464
+      Cone_Char_Front_2_9: 1991421554
+      Cone_Char_Front_2_2: 682212461
+      Cone_Char_Front_2_4: 1465025424
+      Cone_Char_Front_2_5: 311592190
+      Cone_Char_Front_2_6: -265867553
+      Cone_Char_Front_2_7: -1230432938
+      Cone_Char_Front_2_10: 260939996
+      Cone_Char_Front_2_3: -490526912
+      Cone_Char_Front_2_1: 777875376
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
