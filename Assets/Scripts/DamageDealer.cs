@@ -21,7 +21,10 @@ public class DamageDealer : MonoBehaviour
                 OnAttackHit += otherHealth.TakeDamage;
             }
 
-            OnAttackHit?.Invoke(damage);
+            if(collision.gameObject.GetComponent<PlayerHealth>() != null)
+            {
+                OnAttackHit?.Invoke(damage);
+            }
         }
 
         // add other hits than player with parameters ig here.

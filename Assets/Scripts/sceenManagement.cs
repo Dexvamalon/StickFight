@@ -18,7 +18,7 @@ public class sceenManagement : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player1") || collision.CompareTag("Player2"))
         {
             _playerHere = true;
             OpenInteractableIcon();
@@ -27,8 +27,7 @@ public class sceenManagement : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.CompareTag("Player"))
-        {
+        if (collision.CompareTag("Player1") || collision.CompareTag("Player2")){
             _playerHere = false;
             CloseInteractableIcon();
         }
@@ -42,6 +41,11 @@ public class sceenManagement : MonoBehaviour
         if (_playerHere && _isPressing)
         {
             SceneManager.LoadScene(sceneToLoad);
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
