@@ -59,7 +59,7 @@ public class PlayerSpriteController : MonoBehaviour
         List<Sprite>[] directions = { skinDown, skinUp, skinSide };
         if (spriteRenderer.sprite != directions[spriteIndex][skinIndex])
         {
-            Debug.Log(directions[spriteIndex][skinIndex]);
+            //Debug.Log(directions[spriteIndex][skinIndex]);
         }
         spriteRenderer.sprite = directions[spriteIndex][skinIndex];
     }

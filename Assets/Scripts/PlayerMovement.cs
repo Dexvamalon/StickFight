@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashSpeed = 1f;
     [SerializeField] private float dashTime = 1f;
     private Vector2 facingDir = new Vector2(0,-1);
-    private Vector2 attackDir = new Vector2(0, -1);
+    [HideInInspector] public Vector2 attackDir { get; private set; } = new Vector2(0, -1);
     [SerializeField] private float defaultDrag = 20f;
     [SerializeField] private float dashDrag = 5f;
 

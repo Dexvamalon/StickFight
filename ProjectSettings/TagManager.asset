@@ -7,11 +7,13 @@ TagManager:
   - Player1
   - Player2
   - ActivatingAttack
+  - Player1Sword
+  - Player2Sword
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Player 1

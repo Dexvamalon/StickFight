@@ -7,8 +7,11 @@ public class GameEventsManager : MonoBehaviour
 
     private GameObject player1;
     private GameObject player2;
+    [SerializeField] private GameObject player1Sword;
+    [SerializeField] private GameObject player2Sword;
     [SerializeField] private Vector3 player1StartPos;
     [SerializeField] private Vector3 player2StartPos;
+    [SerializeField] private Vector3 swordPos;
 
     private void Start()
     {
@@ -27,6 +30,23 @@ public class GameEventsManager : MonoBehaviour
         //make cooler and smother
         player1.transform.position = player1StartPos;
         player2.transform.position = player2StartPos;
+
+        switch (player)
+        {
+            case "Player1":
+                player1Sword.SetActive(true);
+                player2Sword.SetActive(false);
+                player1Sword.transform.position = swordPos;
+                break;
+            case "Player2":
+                player1Sword.SetActive(false);
+                player2Sword.SetActive(true);
+                player2Sword.transform.position = swordPos;
+                break;
+            default:
+                break;
+        }
+            
 
         //have weapons do stuff and stuff.
     }
