@@ -6,12 +6,27 @@ public class PlayerGraphics : MonoBehaviour
 {
 
     PlayerMovement playerMovement;
+    PlayerHealth playerHealth;
+    PlayerHealth otherPlayerHealth;
     Animator playerAnimator;
+
+    GameObject playerSword;
 
     private void Awake()
     {
         playerAnimator = GetComponentInParent<Animator>();
         playerMovement = transform.root.GetComponent<PlayerMovement>();
+        playerHealth = transform.parent.GetComponentInChildren<PlayerHealth>();
+        if(this.tag == "Player1")
+        {
+            otherPlayerHealth = GameObject.FindGameObjectWithTag("Player2").GetComponentInChildren<PlayerHealth>();
+        }
+        else
+        {
+            otherPlayerHealth = GameObject.FindGameObjectWithTag("Player1").GetComponentInChildren<PlayerHealth>();
+        }
+
+        playerSword = transform.Find("Weapon").gameObject;
     }
 
     private void Start()
@@ -21,8 +36,23 @@ public class PlayerGraphics : MonoBehaviour
         playerMovement.OnRunning += PlayerMovement_OnRunning;
         playerMovement.OnFacing += PlayerMovement_OnFacing;
         playerMovement.OnDash += PlayerMovement_OnDash;
+        playerHealth.onStockLost += PlayerMovement_OnStockLost;
+        otherPlayerHealth.onStockLost += PlayerMovement_OnStockLost;
     }
 
+    private void PlayerMovement_OnStockLost(string player)
+    {
+        if(transform.root.tag == player)
+        {
+            playerSword.SetActive(false);
+            playerAnimator.SetBool("Has sword", false);
+        }
+        else
+        {
+            playerSword.SetActive(true);
+            playerAnimator.SetBool("Has sword", true);
+        }
+    }
 
     private void PlayerMovement_OnAttack()
     {
