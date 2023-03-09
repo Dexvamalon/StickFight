@@ -1885,9 +1885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Sword: {fileID: 1808697257}
   player2Sword: {fileID: 1292888028}
-  player1StartPos: {x: 0, y: 0, z: 0}
-  player2StartPos: {x: 0, y: 0, z: 0}
-  swordPos: {x: 0, y: 0, z: 0}
+  swordMoveTime: 0.2
 --- !u!4 &1133114873
 Transform:
   m_ObjectHideFlags: 0

@@ -38,6 +38,22 @@ public class PlayerGraphics : MonoBehaviour
         playerMovement.OnDash += PlayerMovement_OnDash;
         playerHealth.onStockLost += PlayerMovement_OnStockLost;
         otherPlayerHealth.onStockLost += PlayerMovement_OnStockLost;
+
+        playerMovement.OnSwordPickUp += PlayerMovement_OnSwordPickUp;
+    }
+
+    private void PlayerMovement_OnSwordPickUp(string player, float pickUpDelay)
+    {
+        StartCoroutine(PickupWait(pickUpDelay));
+    }
+
+    private IEnumerator PickupWait(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        playerSword.SetActive(true);
+        playerAnimator.SetBool("Has sword", true);
+        playerMovement.hasSword = true;
     }
 
     private void PlayerMovement_OnStockLost(string player)
@@ -46,11 +62,13 @@ public class PlayerGraphics : MonoBehaviour
         {
             playerSword.SetActive(false);
             playerAnimator.SetBool("Has sword", false);
+            playerMovement.hasSword = false;
         }
         else
         {
             playerSword.SetActive(true);
             playerAnimator.SetBool("Has sword", true);
+            playerMovement.hasSword = true;
         }
     }
 

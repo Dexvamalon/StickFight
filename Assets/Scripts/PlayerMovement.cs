@@ -3,48 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class PlayerMovement : MonoBehaviour
 {
-    //add way to start attack and send attack event.
+        #region variables
+
+    #region refrences
+
     [Header("Refrences")]
     CoolDowns coolDowns;
-    [Header ("Other")]
     private Rigidbody playerRb;
     private PlayerInput playerInput;
     private PlayerControls playerControls;
-    [SerializeField] private float movementSpeed = 1f;
-    [SerializeField] private float coolDownSpeed = 1f;
-    private bool slowMove = true;
-    [SerializeField] private float dashSpeed = 1f;
-    [SerializeField] private float dashTime = 1f;
-    private Vector2 facingDir = new Vector2(0,-1);
-    [HideInInspector] public Vector2 attackDir { get; private set; } = new Vector2(0, -1);
-    [SerializeField] private float defaultDrag = 20f;
-    [SerializeField] private float dashDrag = 5f;
-
     [SerializeField] private SpriteRenderer _sr;
 
-    [SerializeField] private bool isPlayer1 = true;
+    #endregion
+    #region movment
 
-    private Vector2 inputVector;
+    [Header ("Other")]
+    [SerializeField] private float movementSpeed = 1f;        //movement
+    [SerializeField] private float coolDownSpeed = 1f;        //movement
+    private bool slowMove = true;                             //mevement
+    [SerializeField] private float movementEventSpeed = 0.1f; //movement
 
-    [SerializeField] private float movementEventSpeed = 0.1f;
+    #endregion
+    #region dashes
 
+    [SerializeField] private float dashSpeed = 1f;            //dash
+    [SerializeField] private float dashTime = 1f;             //dash
+    [SerializeField] private float defaultDrag = 20f;         //dash
+    [SerializeField] private float dashDrag = 5f;             //dash
 
-    //////////////////////////////////////////////////////////
-                     //Events For animator//
-    //////////////////////////////////////////////////////////
-    
-    public event Action OnAttack;
-    public event Action OnNeutralAttack;
-    public event Action<bool> OnRunning;
-    public event Action<Vector2> OnFacing;
-    public event Action OnDash;
+    #endregion
+    #region input
+    [SerializeField] private bool isPlayer1 = true;           //input
+    private Vector2 inputVector;                              //input
 
-    //////////////////////////////////////////////////////////
-            //Delegates and stuff for input buffer//
-    //////////////////////////////////////////////////////////
+    #endregion
+    #region Input buffer
 
     private Action inputBufferPointer;
     private IEnumerator curentInputBuffer;
@@ -56,9 +51,33 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float attackBuffer = 0.1f;
     [SerializeField] private float dashBuffer = 0.1f;
 
-    //////////////////////////////////////////////////////////
-                            //Code//
-    //////////////////////////////////////////////////////////
+    #endregion
+    #region facing direction
+
+    private Vector2 facingDir = new Vector2(0,-1);            //dir
+    [HideInInspector] public Vector2 attackDir { get; private set; } = new Vector2(0, -1); //dir
+
+    #endregion
+    #region Animator events
+
+    public event Action OnAttack;
+    public event Action OnNeutralAttack;
+    public event Action<bool> OnRunning;
+    public event Action<Vector2> OnFacing;
+    public event Action OnDash;
+
+    #endregion
+    #region sword pickup
+
+    [HideInInspector] public bool hasSword = true;            //sword
+    [SerializeField] private float SwordPickUpDelay = 1f;     //sword
+    public event Action<string, float> OnSwordPickUp;         //sword
+
+    #endregion
+
+        #endregion
+
+        #region code
 
     private void Awake()
     {
@@ -72,11 +91,25 @@ public class PlayerMovement : MonoBehaviour
         {   playerControls.Player.Enable();
             playerControls.Player.Dash.performed += Dash;
             playerControls.Player.Attack.performed += AttackPerformed;
+            playerControls.Player.Special.performed += SpecialPerformed;
         }
         else
         {   playerControls.Player2.Enable();
             playerControls.Player2.Dash.performed += Dash;
             playerControls.Player2.Attack.performed += AttackPerformed;
+            playerControls.Player2.Attack.performed += SpecialPerformed;
+        }
+    }
+
+    public void SpecialPerformed(InputAction.CallbackContext context)
+    {
+        if(!hasSword)
+        {
+            OnSwordPickUp?.Invoke(transform.tag, SwordPickUpDelay);
+        }
+        else
+        {
+            //activate special attack;
         }
     }
 
@@ -135,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Dash(InputAction.CallbackContext context) // todo add dash cooldown, add input buffer.
+    public void Dash(InputAction.CallbackContext context) // TODO add dash cooldown, add input buffer.
     {
         //Debug.Log(context);
         //Debug.Log("Dashed! " + context.phase);
@@ -263,4 +296,6 @@ public class PlayerMovement : MonoBehaviour
         slowMove = true;
         playerRb.drag = defaultDrag;
     }
+
+        #endregion
 }
