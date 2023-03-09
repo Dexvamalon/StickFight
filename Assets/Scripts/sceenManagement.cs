@@ -18,7 +18,7 @@ public class sceenManagement : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player1") || collision.CompareTag("Player2"))
+        if (collision.CompareTag("Player1") || collision.CompareTag("Player2") || collision.CompareTag("Player"))
         {
             _playerHere = true;
             OpenInteractableIcon();
@@ -27,7 +27,8 @@ public class sceenManagement : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.CompareTag("Player1") || collision.CompareTag("Player2")){
+        if (collision.CompareTag("Player1") || collision.CompareTag("Player2") || collision.CompareTag("Player"))
+        {
             _playerHere = false;
             CloseInteractableIcon();
         }
