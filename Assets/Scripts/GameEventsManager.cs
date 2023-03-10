@@ -19,6 +19,9 @@ public class GameEventsManager : MonoBehaviour
     Vector3 currentVelocity;
     #endregion
 
+    float matchStartTime;
+    DontDestroyOnLoad ddol;
+
     private void Start()
     {
         player1 = GameObject.FindGameObjectWithTag("Player1");
@@ -26,14 +29,19 @@ public class GameEventsManager : MonoBehaviour
 
         player1.GetComponentInChildren<PlayerHealth>().onStockLost += OnStockLost;
         player2.GetComponentInChildren<PlayerHealth>().onStockLost += OnStockLost;
+        player1.GetComponentInChildren<PlayerHealth>().onPlayerDeath += OnPlayerDeath;
+        player2.GetComponentInChildren<PlayerHealth>().onPlayerDeath += OnPlayerDeath;
         player1.GetComponent<PlayerMovement>().OnSwordPickUp += OnSwordPickUp;
         player2.GetComponent<PlayerMovement>().OnSwordPickUp += OnSwordPickUp;
 
         player1StartPos = player1.transform.position;
         player2StartPos = player2.transform.position;
+
+        ddol = FindObjectOfType<DontDestroyOnLoad>();
+        matchStartTime = Time.time;
     }
 
-    
+
     private void OnSwordPickUp(string player, float x)
     {
         //make sword move toward player and then disable.
@@ -76,6 +84,11 @@ public class GameEventsManager : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    private void OnPlayerDeath()
+    {
+        ddol.matchTime = Time.time - matchStartTime;
     }
 
     private void OnStockLost(string player)

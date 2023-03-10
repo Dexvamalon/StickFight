@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 3489222162541293757}
   - component: {fileID: 3489222162541293759}
   - component: {fileID: 3489222162541293756}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player 1
   m_TagString: Player1
   m_Icon: {fileID: 0}
@@ -913,18 +913,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711786d774728af4ab6b64fc9989e6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sr: {fileID: 3489222162509291000}
   movementSpeed: 8
   coolDownSpeed: 0.5
+  movementEventSpeed: 0.1
   dashSpeed: 20
   dashTime: 0.5
   defaultDrag: 20
   dashDrag: 5
-  _sr: {fileID: 3489222162509291000}
   isPlayer1: 1
-  movementEventSpeed: 0.1
   neutralAttackBuffer: 0.1
   attackBuffer: 0.1
   dashBuffer: 0.1
+  hasSword: 1
+  SwordPickUpDelay: 1
 --- !u!114 &3489222162541293757
 MonoBehaviour:
   m_ObjectHideFlags: 0

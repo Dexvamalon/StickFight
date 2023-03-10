@@ -24,9 +24,35 @@ public class PlayerSpriteController : MonoBehaviour
 
     SpriteRenderer parentSpriteRenderer;
     SpriteRenderer spriteRenderer;
+    DontDestroyOnLoad ddol;
 
     private void Start()
     {
+        ddol = FindObjectOfType<DontDestroyOnLoad>();
+
+        if(isPartOfSkin)
+        {
+            if(transform.root.tag == "Player1")
+            {
+                skinIndex = ddol.skin;
+            }
+            else
+            {
+                skinIndex = ddol.skin2;
+            }
+        }
+        else
+        {
+            if (transform.root.tag == "Player1")
+            {
+                skinIndex = ddol.weapon;
+            }
+            else
+            {
+                skinIndex = ddol.weapon2;
+            }
+        }
+
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         if(isPartOfSkin)

@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerControls playerControls;
     [SerializeField] private SpriteRenderer _sr;
+    DontDestroyOnLoad ddol;
 
     #endregion
     #region movment
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float coolDownSpeed = 1f;        //movement
     private bool slowMove = true;                             //mevement
     [SerializeField] private float movementEventSpeed = 0.1f; //movement
+    private Vector3 lastPos;
 
     #endregion
     #region dashes
@@ -75,16 +77,12 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-        #endregion
+    #endregion
 
-        #region code
+    #region code
 
     private void Awake()
     {
-        playerRb = GetComponent<Rigidbody>();
-        playerRb.drag = defaultDrag;
-        playerInput = GetComponent<PlayerInput>();
-        coolDowns = GetComponent<CoolDowns>();
 
         playerControls = new PlayerControls();
         if(isPlayer1)
@@ -101,9 +99,55 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void SpecialPerformed(InputAction.CallbackContext context)
+    private void Start()
+    {
+        playerRb = GetComponent<Rigidbody>();
+        playerRb.drag = defaultDrag;
+        playerInput = GetComponent<PlayerInput>();
+        coolDowns = GetComponent<CoolDowns>();
+        ddol = FindObjectOfType<DontDestroyOnLoad>();
+
+        lastPos = transform.position;
+    }
+
+    private void Update()
     {
         if(!hasSword)
+        {
+            if (transform.root.tag == "Player1")
+            {
+                ddol.timeUnarmed += Time.deltaTime;
+            }
+            else
+            {
+                ddol.timeUnarmed2 += Time.deltaTime;
+            }
+        }
+
+        if (transform.root.tag == "Player1")
+        {
+            ddol.distanceMoved += Vector3.Distance(transform.position, lastPos);
+        }
+        else
+        {
+            ddol.distanceMoved2 += Vector3.Distance(transform.position, lastPos);
+        }
+
+        lastPos = transform.position;
+    }
+
+    public void SpecialPerformed(InputAction.CallbackContext context)
+    {
+        if (transform.root.tag == "Player1")
+        {
+            ddol.specialAmount++;
+        }
+        else
+        {
+            ddol.specialAmount2++;
+        }
+
+        if (!hasSword)
         {
             OnSwordPickUp?.Invoke(transform.tag, SwordPickUpDelay);
         }

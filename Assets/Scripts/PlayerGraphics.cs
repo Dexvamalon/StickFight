@@ -11,6 +11,7 @@ public class PlayerGraphics : MonoBehaviour
     Animator playerAnimator;
 
     GameObject playerSword;
+    DontDestroyOnLoad ddol;
 
     private void Awake()
     {
@@ -40,6 +41,8 @@ public class PlayerGraphics : MonoBehaviour
         otherPlayerHealth.onStockLost += PlayerMovement_OnStockLost;
 
         playerMovement.OnSwordPickUp += PlayerMovement_OnSwordPickUp;
+
+        ddol = FindObjectOfType<DontDestroyOnLoad>();
     }
 
     private void PlayerMovement_OnSwordPickUp(string player, float pickUpDelay)
@@ -74,12 +77,28 @@ public class PlayerGraphics : MonoBehaviour
 
     private void PlayerMovement_OnAttack()
     {
+        if(transform.root.tag == "Player1")
+        {
+            ddol.attackAmount++;
+        }
+        else
+        {
+            ddol.attackAmount2++;
+        }
         playerAnimator.SetTrigger("Attack");
         playerAnimator.SetBool("Is running", false);
     }
 
     private void PlayerMovement_OnNeutralAttack()
     {
+        if (transform.root.tag == "Player1")
+        {
+            ddol.attackAmount++;
+        }
+        else
+        {
+            ddol.attackAmount2++;
+        }
         playerAnimator.SetTrigger("Neutral attack");
         playerAnimator.SetBool("Is running", false);
     }
@@ -122,6 +141,14 @@ public class PlayerGraphics : MonoBehaviour
 
     private void PlayerMovement_OnDash()
     {
+        if (transform.root.tag == "Player1")
+        {
+            ddol.dodgeAmount++;
+        }
+        else
+        {
+            ddol.dodgeAmount2++;
+        }
         playerAnimator.SetTrigger("Dodge");
         playerAnimator.SetBool("Is running", false);
     }
