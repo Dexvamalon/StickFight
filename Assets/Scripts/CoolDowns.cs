@@ -6,7 +6,14 @@ public class CoolDowns : MonoBehaviour
 {
     public bool canDash { get; private set; } = true;
     public bool canAttack { get; private set; } = true;
-    public bool canNeutralAttack { get; private set; } = true;
+
+    private bool _canNeutralAttack = true;
+    public bool canNeutralAttack
+    { 
+        get { return _canNeutralAttack; } 
+        private set { _canNeutralAttack = value; }
+    }
+
     public bool canMove { get; private set; } = true;
 
     [Header("Counted from end of action")]
@@ -26,6 +33,10 @@ public class CoolDowns : MonoBehaviour
 
     private int mainIndex;
 
+    private void Start()
+    {
+        Debug.Log(canNeutralAttack);
+    }
 
     public void DashCoolDown()
     {

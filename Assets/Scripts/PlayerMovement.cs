@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     CoolDowns coolDowns;
     private Rigidbody playerRb;
     private PlayerInput playerInput;
-    private PlayerControls playerControls;
+    [HideInInspector] public PlayerControls playerControls { get; private set; }
     [SerializeField] private SpriteRenderer _sr;
     DontDestroyOnLoad ddol;
 
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     #region code
 
-    private void Awake()
+    private void Start()
     {
 
         playerControls = new PlayerControls();
@@ -97,9 +97,10 @@ public class PlayerMovement : MonoBehaviour
             playerControls.Player2.Attack.performed += AttackPerformed;
             playerControls.Player2.Attack.performed += SpecialPerformed;
         }
+        Start2();
     }
 
-    private void Start()
+    private void Start2()
     {
         playerRb = GetComponent<Rigidbody>();
         playerRb.drag = defaultDrag;
@@ -231,9 +232,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void AttackPerformed(InputAction.CallbackContext context)
     {
-        
-        if(inputVector == new Vector2(0, 0))
+        Debug.Log(coolDowns.canNeutralAttack);
+        //int[] nice = new int[2];
+        //nice[8] = 4;
+
+        if (inputVector == Vector2.zero)
         {
+            Debug.Log(coolDowns.canNeutralAttack);
+            
+
             if (!coolDowns.canNeutralAttack)
             {
                 BufferCoroutineStarter(neutralAttackBuffer);
@@ -265,17 +272,18 @@ public class PlayerMovement : MonoBehaviour
     {
         waiting = true;
 
-        if(curentInputBuffer != null)
+        /*if("InputBuffer" != null)
         {
-            StopCoroutine(curentInputBuffer);
-        }
-        curentInputBuffer = InputBuffer(buf);
-        StartCoroutine(curentInputBuffer);
+            StopCoroutine("InputBuffer");
+        }*/
+        StartCoroutine(InputBuffer(buf));
     }
 
+
+    int i = 0;
     private IEnumerator InputBuffer(float buffer)
     {
-
+        Debug.Log(i++ + "wow   coiol");
         yield return new WaitForSeconds(buffer);
 
         waiting = false;
@@ -341,5 +349,16 @@ public class PlayerMovement : MonoBehaviour
         playerRb.drag = defaultDrag;
     }
 
-        #endregion
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        playerControls.Player.Dash.performed -= Dash;
+        playerControls.Player.Attack.performed -= AttackPerformed;
+        playerControls.Player.Special.performed -= SpecialPerformed;
+        playerControls.Player2.Dash.performed -= Dash;
+        playerControls.Player2.Attack.performed -= AttackPerformed;
+        playerControls.Player2.Attack.performed -= SpecialPerformed;
+    }
+
+    #endregion
 }

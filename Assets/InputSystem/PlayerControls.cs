@@ -156,6 +156,138 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Control"",
+            ""id"": ""ddf8154a-a291-4f21-ad74-c8c6714620f7"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""777a5ea0-ea68-49d5-9ff8-db3c12bda440"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f4523d3-fd1a-44e0-962a-5e710374e166"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""4cccba33-4100-4489-88eb-124758f4a30e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e6eeb21-be04-4148-ad1f-d7f4339ed479"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""5f308b82-b36b-4044-8be8-d602813544ba"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""aee63dfd-eb97-45ab-b2f1-35777b618ac5"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""ccc3d584-5b12-4d6a-b3bb-5304ac2b8e7f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""26093f10-1456-4e5c-b62d-ef694a194882"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""7d244726-f452-4cfa-9108-697d392d580c"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f1940bf6-a5ad-4193-9ec6-c6958bcd3ffb"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43b5b3f1-f664-4dd9-9fba-8c58286b6d9c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf585e51-6cf6-40d3-aab6-f8dbe0766c38"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Player2"",
             ""id"": ""1d10deef-fe2f-42a8-b2f3-80b077ad3473"",
             ""actions"": [
@@ -286,6 +418,138 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Control2"",
+            ""id"": ""29c353fb-8a28-4379-93dd-01691017d52f"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""4e03d59c-613b-4d05-9104-3d164456a10f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""71bb6b17-61f3-4293-b90c-8ad3c76a821b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8c5ca23-139c-44ca-a121-4c83c97fafd6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""6f189aff-bd58-4971-94f8-13d79946dc5d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""70ebb613-e692-401c-a747-e5d1cc9fa227"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""771e9ba0-d9c0-43cb-895a-461cd4afc2d1"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""738fc468-4b8f-442c-96e5-cf4006640f54"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""4ce86abf-8de6-45ad-baaa-a2ed566c084d"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""74a3788d-553d-4276-b241-93871afa2cbb"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a19b160-9386-4167-9e6c-0bb6f7072d9f"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a62ad01a-3c74-42c6-a409-57b676949ee8"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""074069be-3ebe-4c62-8eb9-6a27f6c3dc8a"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -296,12 +560,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Special = m_Player.FindAction("Special", throwIfNotFound: true);
+        // Control
+        m_Control = asset.FindActionMap("Control", throwIfNotFound: true);
+        m_Control_Move = m_Control.FindAction("Move", throwIfNotFound: true);
+        m_Control_Dash = m_Control.FindAction("Dash", throwIfNotFound: true);
+        m_Control_Select = m_Control.FindAction("Select", throwIfNotFound: true);
+        m_Control_Special = m_Control.FindAction("Special", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
         m_Player2_Dash = m_Player2.FindAction("Dash", throwIfNotFound: true);
         m_Player2_Attack = m_Player2.FindAction("Attack", throwIfNotFound: true);
         m_Player2_Special = m_Player2.FindAction("Special", throwIfNotFound: true);
+        // Control2
+        m_Control2 = asset.FindActionMap("Control2", throwIfNotFound: true);
+        m_Control2_Move = m_Control2.FindAction("Move", throwIfNotFound: true);
+        m_Control2_Dash = m_Control2.FindAction("Dash", throwIfNotFound: true);
+        m_Control2_Select = m_Control2.FindAction("Select", throwIfNotFound: true);
+        m_Control2_Special = m_Control2.FindAction("Special", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -415,6 +691,63 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public PlayerActions @Player => new PlayerActions(this);
 
+    // Control
+    private readonly InputActionMap m_Control;
+    private IControlActions m_ControlActionsCallbackInterface;
+    private readonly InputAction m_Control_Move;
+    private readonly InputAction m_Control_Dash;
+    private readonly InputAction m_Control_Select;
+    private readonly InputAction m_Control_Special;
+    public struct ControlActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ControlActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Control_Move;
+        public InputAction @Dash => m_Wrapper.m_Control_Dash;
+        public InputAction @Select => m_Wrapper.m_Control_Select;
+        public InputAction @Special => m_Wrapper.m_Control_Special;
+        public InputActionMap Get() { return m_Wrapper.m_Control; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ControlActions set) { return set.Get(); }
+        public void SetCallbacks(IControlActions instance)
+        {
+            if (m_Wrapper.m_ControlActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_ControlActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_ControlActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_ControlActionsCallbackInterface.OnMove;
+                @Dash.started -= m_Wrapper.m_ControlActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_ControlActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_ControlActionsCallbackInterface.OnDash;
+                @Select.started -= m_Wrapper.m_ControlActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_ControlActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_ControlActionsCallbackInterface.OnSelect;
+                @Special.started -= m_Wrapper.m_ControlActionsCallbackInterface.OnSpecial;
+                @Special.performed -= m_Wrapper.m_ControlActionsCallbackInterface.OnSpecial;
+                @Special.canceled -= m_Wrapper.m_ControlActionsCallbackInterface.OnSpecial;
+            }
+            m_Wrapper.m_ControlActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @Special.started += instance.OnSpecial;
+                @Special.performed += instance.OnSpecial;
+                @Special.canceled += instance.OnSpecial;
+            }
+        }
+    }
+    public ControlActions @Control => new ControlActions(this);
+
     // Player2
     private readonly InputActionMap m_Player2;
     private IPlayer2Actions m_Player2ActionsCallbackInterface;
@@ -471,6 +804,63 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public Player2Actions @Player2 => new Player2Actions(this);
+
+    // Control2
+    private readonly InputActionMap m_Control2;
+    private IControl2Actions m_Control2ActionsCallbackInterface;
+    private readonly InputAction m_Control2_Move;
+    private readonly InputAction m_Control2_Dash;
+    private readonly InputAction m_Control2_Select;
+    private readonly InputAction m_Control2_Special;
+    public struct Control2Actions
+    {
+        private @PlayerControls m_Wrapper;
+        public Control2Actions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Control2_Move;
+        public InputAction @Dash => m_Wrapper.m_Control2_Dash;
+        public InputAction @Select => m_Wrapper.m_Control2_Select;
+        public InputAction @Special => m_Wrapper.m_Control2_Special;
+        public InputActionMap Get() { return m_Wrapper.m_Control2; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Control2Actions set) { return set.Get(); }
+        public void SetCallbacks(IControl2Actions instance)
+        {
+            if (m_Wrapper.m_Control2ActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_Control2ActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_Control2ActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_Control2ActionsCallbackInterface.OnMove;
+                @Dash.started -= m_Wrapper.m_Control2ActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_Control2ActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_Control2ActionsCallbackInterface.OnDash;
+                @Select.started -= m_Wrapper.m_Control2ActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_Control2ActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_Control2ActionsCallbackInterface.OnSelect;
+                @Special.started -= m_Wrapper.m_Control2ActionsCallbackInterface.OnSpecial;
+                @Special.performed -= m_Wrapper.m_Control2ActionsCallbackInterface.OnSpecial;
+                @Special.canceled -= m_Wrapper.m_Control2ActionsCallbackInterface.OnSpecial;
+            }
+            m_Wrapper.m_Control2ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @Special.started += instance.OnSpecial;
+                @Special.performed += instance.OnSpecial;
+                @Special.canceled += instance.OnSpecial;
+            }
+        }
+    }
+    public Control2Actions @Control2 => new Control2Actions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -478,11 +868,25 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnSpecial(InputAction.CallbackContext context);
     }
+    public interface IControlActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
+    }
     public interface IPlayer2Actions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
+    }
+    public interface IControl2Actions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
         void OnSpecial(InputAction.CallbackContext context);
     }
 }
