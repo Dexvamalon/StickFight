@@ -9,6 +9,7 @@ TagManager:
   - ActivatingAttack
   - Player1Sword
   - Player2Sword
+  - Handle
   layers:
   - Default
   - TransparentFX
