@@ -191,15 +191,24 @@ public class PlayerMovement : MonoBehaviour
 
             facingDir = inputVector;
 
-            if (inputVector.x != attackDir.x)
+            
+            if (inputVector.x != attackDir.x && inputVector.x != 0)
             {
                 attackDir = new Vector2(inputVector.x, 0);
+                Vector2 vec = attackDir;
+                vec.Normalize();
+                attackDir = vec;
                 OnFacing?.Invoke(attackDir);
+                Debug.Log("Turnnnnnnn,,,,,,..... " + attackDir + " x");
             }
-            else if (inputVector.y != attackDir.y)
+            else if (inputVector.y != attackDir.y && inputVector.y != 0)
             {
                 attackDir = new Vector2(0, inputVector.y);
+                Vector2 vec = attackDir;
+                vec.Normalize();
+                attackDir = vec;
                 OnFacing?.Invoke(attackDir);
+                Debug.Log("Turnnnnnnn,,,,,,..... " + attackDir + " y");
             }
         }
 
