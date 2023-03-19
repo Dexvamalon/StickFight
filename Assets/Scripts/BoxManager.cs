@@ -21,17 +21,49 @@ public class BoxManager : MonoBehaviour
     private Slider tempSlider;
     private float lastFrameYMovement;
     #endregion
+    #region map var
+    [Header("map var")]
 
-    [SerializeField] private GameObject menuScroller;
-    private ScrollRect mapScrollRect;
-    [SerializeField] private RectTransform scrollRect;
+    [SerializeField] private GameObject mapScroller;
+    [SerializeField] private RectTransform mapScrollRect;
     int curMap;
     [SerializeField] float mapImageWidth;
     [SerializeField] float mapPadding;
-    Vector3 currentVelocity;
+    Vector3 mapCurrentVelocity;
     [SerializeField] float moveTime;
     private float mapLastFrameYMovement;
-    private Vector3 targetPos;
+    private Vector3 mapTargetPos;
+    [SerializeField] int mapCount;
+    [SerializeField] List<GameObject> mapBorders;
+    [SerializeField] private List<int> mapIndex;
+
+    #endregion
+
+    [Header("char1select var")]
+
+    [SerializeField] private GameObject char1Scroller;
+    [SerializeField] private RectTransform char1ScrollRect;
+    int curChar1;
+    [SerializeField] float char1ImageWidth;
+    [SerializeField] float char1Padding;
+    Vector3 char1CurrentVelocity;
+    private float char1LastFrameYMovement;
+    private Vector3 char1TargetPos;
+    [SerializeField] int char1Count;
+    [SerializeField] List<GameObject> char1Borders;
+
+    [Header("char2select var")]
+
+    [SerializeField] private GameObject char2Scroller;
+    [SerializeField] private RectTransform char2ScrollRect;
+    int curChar2;
+    [SerializeField] float char2ImageWidth;
+    [SerializeField] float char2Padding;
+    Vector3 char2CurrentVelocity;
+    private float char2LastFrameYMovement;
+    private Vector3 char2TargetPos;
+    [SerializeField] int char2Count;
+    [SerializeField] List<GameObject> char2Borders;
 
     MainMenu mainMenu;
 
@@ -56,8 +88,14 @@ public class BoxManager : MonoBehaviour
         currentSlider = 2;
         tempSlider = slidersArray[currentSlider ].GetComponent<Slider>();
 
-        mapScrollRect = menuScroller.GetComponentInChildren<ScrollRect>();
-        curMap = 1;
+        curMap = 0;
+        mapBorders[curMap].SetActive(true);
+
+        curChar1 = 0;
+        char1Borders[curChar1].SetActive(true);
+
+        curChar2 = 0;
+        char2Borders[curChar2].SetActive(true);
     }
 
     private void FixedUpdate()
@@ -94,10 +132,10 @@ public class BoxManager : MonoBehaviour
 
                     break;
                 case 2:
-
+                    CharMove1(inputVector[i]);
                     break;
                 case 3:
-
+                    CharMove2(inputVector[i]);
                     break;
                 case 4:
                     MapMove(inputVector[i]);
@@ -140,11 +178,11 @@ public class BoxManager : MonoBehaviour
         }
     }
 
-    private void SettingsToggle(int player)
+    private void BoxToggle(int player, ref GameObject var)
     {
-        if(sliders.activeInHierarchy)
+        if(var.activeInHierarchy)
         {
-            sliders.SetActive(false);
+            var.SetActive(false);
             if(player == 0)
             {
                 playerControls1.Control.Disable();
@@ -158,7 +196,7 @@ public class BoxManager : MonoBehaviour
         }
         else
         {
-            sliders.SetActive(true);
+            var.SetActive(true);
             if (player == 0)
             {
                 playerControls1.Control.Enable();
@@ -174,19 +212,65 @@ public class BoxManager : MonoBehaviour
 
     private void MapMove(Vector2 input)
     {
-        if (menuScroller.activeInHierarchy)
+        if (mapScroller.activeInHierarchy)
         {
             if (input.x != 0 && input.x != mapLastFrameYMovement)
             {
-                curMap = Mathf.Clamp(curMap + (int)input.x, 1, 4);// set clamp to be right
+                mapBorders[curMap].SetActive(false);
+                curMap = Mathf.Clamp(curMap + (int)input.x, 0, mapCount-1);// set clamp to be right
+                mapBorders[curMap].SetActive(true);
                 Debug.Log(curMap);
-                targetPos = new Vector3(-(mapImageWidth / 2 * (curMap * 2 - 1) + curMap * mapPadding), scrollRect.localPosition.y, scrollRect.localPosition.z);
-                Debug.Log(targetPos);
+                mapTargetPos = new Vector3(-(mapImageWidth / 2 * ((curMap+1) * 2 - 1) + (curMap + 1) * mapPadding), mapScrollRect.localPosition.y, mapScrollRect.localPosition.z);
+                Debug.Log(mapTargetPos);
                 //StartCoroutine(MapMoveSmoothDamp());
             }
-            scrollRect.localPosition = Vector3.SmoothDamp(scrollRect.localPosition, targetPos, ref currentVelocity, moveTime);
+            mapScrollRect.localPosition = Vector3.SmoothDamp(mapScrollRect.localPosition, mapTargetPos, ref mapCurrentVelocity, moveTime);
             //make it select middle object
             mapLastFrameYMovement = input.x;
+        }
+    }
+
+    private void CharMove1(Vector2 input)
+    {
+        if (char1Scroller.activeInHierarchy)
+        {
+            if (input.x != 0 && input.x != char1LastFrameYMovement)
+            {
+                char1Borders[curChar1].SetActive(false);
+                curChar1 = Mathf.Clamp(curChar1 + (int)input.x, 0, char1Count - 1);// set clamp to be right
+                char1Borders[curChar1].SetActive(true);
+                Debug.Log(curChar1);
+                char1TargetPos = new Vector3(-(char1ImageWidth / 2 * ((curChar1 + 1) * 2 - 1) + (curChar1 + 1) * char1Padding), char1ScrollRect.localPosition.y, char1ScrollRect.localPosition.z);
+                Debug.Log(mapTargetPos);
+                //StartCoroutine(MapMoveSmoothDamp());
+            }
+            char1ScrollRect.localPosition = Vector3.SmoothDamp(char1ScrollRect.localPosition, char1TargetPos, ref char1CurrentVelocity, moveTime);
+            //make it select middle object
+            char1LastFrameYMovement = input.x;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////
+    // todo link up the selected character with player skin.
+    ////////////////////////////////////////////////////////////////
+
+    private void CharMove2(Vector2 input)
+    {
+        if (char2Scroller.activeInHierarchy)
+        {
+            if (input.x != 0 && input.x != char2LastFrameYMovement)
+            {
+                char2Borders[curChar2].SetActive(false);
+                curChar2 = Mathf.Clamp(curChar2 + (int)input.x, 0, char2Count - 1);// set clamp to be right
+                char2Borders[curChar2].SetActive(true);
+                Debug.Log(curChar2);
+                char2TargetPos = new Vector3(-(char2ImageWidth / 2 * ((curChar2 + 1) * 2 - 1) + (curChar2 + 1) * char2Padding), char2ScrollRect.localPosition.y, char2ScrollRect.localPosition.z);
+                Debug.Log(char2TargetPos);
+                //StartCoroutine(MapMoveSmoothDamp());
+            }
+            char2ScrollRect.localPosition = Vector3.SmoothDamp(char2ScrollRect.localPosition, char2TargetPos, ref char2CurrentVelocity, moveTime);
+            //make it select middle object
+            char2LastFrameYMovement = input.x;
         }
     }
 
@@ -195,40 +279,8 @@ public class BoxManager : MonoBehaviour
         float timeStart = Time.fixedTime;
         while(timeStart + moveTime + 0.5f > Time.fixedTime)
         {
-            scrollRect.localPosition = Vector3.SmoothDamp(scrollRect.localPosition, targetPos, ref currentVelocity, moveTime);
+            mapScrollRect.localPosition = Vector3.SmoothDamp(mapScrollRect.localPosition, mapTargetPos, ref mapCurrentVelocity, moveTime);
             yield return null;
-        }
-    }
-
-    private void MapToggle(int player)
-    {
-        if (menuScroller.activeInHierarchy)
-        {
-            menuScroller.SetActive(false);
-            if (player == 0)
-            {
-                playerControls1.Control.Disable();
-                playerControls1.Player.Enable();
-            }
-            else
-            {
-                playerControls2.Control2.Disable();
-                playerControls2.Player2.Enable();
-            }
-        }
-        else
-        {
-            menuScroller.SetActive(true);
-            if (player == 0)
-            {
-                playerControls1.Control.Enable();
-                playerControls1.Player.Disable();
-            }
-            else
-            {
-                playerControls2.Control2.Enable();
-                playerControls2.Player2.Disable();
-            }
         }
     }
 
@@ -246,19 +298,22 @@ public class BoxManager : MonoBehaviour
         switch (playerBox[player])
         {
             case 0:
-                SettingsToggle(player);
+                BoxToggle(player, ref sliders);
                 break;
             case 1:
                 mainMenu.LoadScene(3);
                 break;
             case 2:
-
+                BoxToggle(player, ref char1Scroller);
                 break;
             case 3:
-
+                BoxToggle(player, ref char2Scroller);
                 break;
             case 4:
-                MapToggle(player);
+                BoxToggle(player, ref mapScroller);
+                break;
+            case 5:
+                mainMenu.LoadScene(mapIndex[curMap]); // make this change scenes depending on map
                 break;
             default:
                 break;

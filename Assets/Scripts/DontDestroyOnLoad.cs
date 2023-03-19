@@ -33,6 +33,7 @@ public class DontDestroyOnLoad : MonoBehaviour
     //other
     public float matchTime;
     public bool player1Win;
+    public int map;
 
     public float mainVolume;
     public float sfxVolume;
