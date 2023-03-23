@@ -74,7 +74,7 @@ public class GameEventsManager : MonoBehaviour
         {
             while (startTime + swordMoveTime + 0.5f > Time.fixedTime)
             {
-                player2Sword.transform.position = Vector3.SmoothDamp(player1Sword.transform.position, player1.transform.position, ref currentVelocity, swordMoveTime);
+                player2Sword.transform.position = Vector3.SmoothDamp(player2Sword.transform.position, player2.transform.position, ref currentVelocity, swordMoveTime);
                 yield return null;
             }
             player2Sword.SetActive(false);
@@ -89,6 +89,7 @@ public class GameEventsManager : MonoBehaviour
     private void OnPlayerDeath()
     {
         ddol.matchTime = Time.time - matchStartTime;
+        GetComponent<MainMenu>().LoadScene(0);
     }
 
     private void OnStockLost(string player)

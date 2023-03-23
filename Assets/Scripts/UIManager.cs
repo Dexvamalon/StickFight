@@ -20,10 +20,10 @@ public class UIManager : MonoBehaviour
         player1HealthScript = GameObject.FindGameObjectWithTag("Player1").GetComponentInChildren<PlayerHealth>();
         player2HealthScript = GameObject.FindGameObjectWithTag("Player2").GetComponentInChildren<PlayerHealth>();
 
-        player1HealthSlider.maxValue = player1HealthScript.health;
-        player1HealthSlider.value = player1HealthScript.health;
-        player2HealthSlider.maxValue = player2HealthScript.health;
-        player2HealthSlider.value = player2HealthScript.health;
+        player1HealthSlider.maxValue = player1HealthScript.maxHealth;
+        player1HealthSlider.value = player1HealthScript.maxHealth;
+        player2HealthSlider.maxValue = player2HealthScript.maxHealth;
+        player2HealthSlider.value = player2HealthScript.maxHealth;
 
     }
 

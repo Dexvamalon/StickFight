@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         {   playerControls.Player2.Enable();
             playerControls.Player2.Dash.performed += Dash;
             playerControls.Player2.Attack.performed += AttackPerformed;
-            playerControls.Player2.Attack.performed += SpecialPerformed;
+            playerControls.Player2.Special.performed += SpecialPerformed;
         }
         Start2();
     }

@@ -70,11 +70,11 @@ public class BoxManager : MonoBehaviour
     private void Start()
     {
         playerControls1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerMovement>().playerControls;
-        //playerControls2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerMovement>().playerControls;
+        playerControls2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerMovement>().playerControls;
         playerControls1.Control.Select.performed += OnSelect1;
         playerControls1.Player.Attack.performed += OnSelect1;
-        //playerControls2.Control2.Select.performed += OnSelect2;
-        //playerControls2.Player2.Attack.performed += OnSelect2;
+        playerControls2.Control2.Select.performed += OnSelect2;
+        playerControls2.Player2.Attack.performed += OnSelect2;
 
         BoxStateSender[] boxesList = FindObjectsOfType<BoxStateSender>(true); //hope this works, test later.
         for (int i = 0; i < boxesList.Length; i++)
@@ -119,7 +119,7 @@ public class BoxManager : MonoBehaviour
     private void Move()
     {
         inputVector[0] = playerControls1.Control.Move.ReadValue<Vector2>();
-        //inputVector[1] = playerControls2.Control2.Move.ReadValue<Vector2>();
+        inputVector[1] = playerControls2.Control2.Move.ReadValue<Vector2>();
 
         for(int i = 0; i < playerBox.Length; i++)
         {
@@ -326,5 +326,7 @@ public class BoxManager : MonoBehaviour
         StopAllCoroutines();
         playerControls1.Control.Select.performed -= OnSelect1;
         playerControls1.Player.Attack.performed -= OnSelect1;
+        playerControls2.Control2.Select.performed -= OnSelect2;
+        playerControls2.Player2.Attack.performed -= OnSelect2;
     }
 }

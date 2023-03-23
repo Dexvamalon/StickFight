@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [HideInInspector] public float health { get; private set; }
-    [SerializeField] private float maxHealth = 100f;
+     [HideInInspector] public float health { get; private set; }
+     public float maxHealth { get; private set; } = 100f;
 
     [HideInInspector] public int stocks { get; private set; }
     private int maxStocks = 3;
@@ -65,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
 
             Debug.Log(gameObject.name + " is dead");
         }
-        else if (stocks <= 1)
+        else if (health <= 0 && stocks <= 1)
         {
             onPlayerDeath?.Invoke();
             if (transform.root.tag == "Player1")
