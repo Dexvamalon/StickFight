@@ -18,7 +18,7 @@ public class PlayerGraphics : MonoBehaviour
         playerAnimator = GetComponentInParent<Animator>();
         playerMovement = transform.root.GetComponent<PlayerMovement>();
         playerHealth = transform.parent.GetComponentInChildren<PlayerHealth>();
-        if(this.tag == "Player1")
+        if(this.transform.root.tag == "Player1")
         {
             otherPlayerHealth = GameObject.FindGameObjectWithTag("Player2").GetComponentInChildren<PlayerHealth>();
         }

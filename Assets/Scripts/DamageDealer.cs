@@ -32,7 +32,7 @@ public class DamageDealer : MonoBehaviour
             {
                 OnAttackHit?.Invoke(damage);
 
-                if(transform.root.tag == "player1")
+                if(transform.root.tag == "Player1" || transform.root.tag == "Player1Sword")
                 {
                     ddol.dmgDealt += damage;
                 }

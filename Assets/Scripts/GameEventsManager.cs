@@ -89,7 +89,7 @@ public class GameEventsManager : MonoBehaviour
     private void OnPlayerDeath()
     {
         ddol.matchTime = Time.time - matchStartTime;
-        GetComponent<MainMenu>().LoadScene(0);
+        GetComponent<MainMenu>().LoadScene(4);
     }
 
     private void OnStockLost(string player)

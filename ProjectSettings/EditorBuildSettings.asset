@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 5770a78e5a1e54da28768931eb98453c
+  - enabled: 1
+    path: Assets/Scenes/Match stats.unity
+    guid: 8ccdf546e80d84a488b13c2d79340c5a
   m_configObjects: {}
