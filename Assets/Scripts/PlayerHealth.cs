@@ -71,10 +71,12 @@ public class PlayerHealth : MonoBehaviour
             if (transform.root.tag == "Player1")
             {
                 ddol.player1Win = false;
+                ddol.stocksLeft = stocks;
             }
             else
             {
                 ddol.player1Win = true;
+                ddol.stocksLeft2 = stocks;
             }
         }
     }

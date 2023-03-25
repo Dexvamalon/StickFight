@@ -67,6 +67,8 @@ public class BoxManager : MonoBehaviour
 
     MainMenu mainMenu;
 
+    DontDestroyOnLoad ddol;
+
     private void Start()
     {
         playerControls1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerMovement>().playerControls;
@@ -75,6 +77,8 @@ public class BoxManager : MonoBehaviour
         playerControls1.Player.Attack.performed += OnSelect1;
         playerControls2.Control2.Select.performed += OnSelect2;
         playerControls2.Player2.Attack.performed += OnSelect2;
+
+        ddol = FindObjectOfType<DontDestroyOnLoad>();
 
         BoxStateSender[] boxesList = FindObjectsOfType<BoxStateSender>(true); //hope this works, test later.
         for (int i = 0; i < boxesList.Length; i++)
@@ -132,10 +136,10 @@ public class BoxManager : MonoBehaviour
 
                     break;
                 case 2:
-                    CharMove1(inputVector[i]);
+                    CharMove1(inputVector[i], i);
                     break;
                 case 3:
-                    CharMove2(inputVector[i]);
+                    CharMove2(inputVector[i], i);
                     break;
                 case 4:
                     MapMove(inputVector[i]);
@@ -172,6 +176,10 @@ public class BoxManager : MonoBehaviour
             if(input.x != 0)
             {
                 tempSlider.value = tempSlider.value + input.x;
+
+                ddol.mainVolume = slidersArray[0].GetComponent<Slider>().value;
+                ddol.musicVolume = slidersArray[1].GetComponent<Slider>().value;
+                ddol.sfxVolume = slidersArray[2].GetComponent<Slider>().value;
             }
             lastFrameYMovement = input.y;
             //do slider stuff
@@ -223,6 +231,7 @@ public class BoxManager : MonoBehaviour
                 mapTargetPos = new Vector3(-(mapImageWidth / 2 * ((curMap+1) * 2 - 1) + (curMap + 1) * mapPadding), mapScrollRect.localPosition.y, mapScrollRect.localPosition.z);
                 Debug.Log(mapTargetPos);
                 //StartCoroutine(MapMoveSmoothDamp());
+                ddol.map = curMap;
             }
             mapScrollRect.localPosition = Vector3.SmoothDamp(mapScrollRect.localPosition, mapTargetPos, ref mapCurrentVelocity, moveTime);
             //make it select middle object
@@ -230,7 +239,7 @@ public class BoxManager : MonoBehaviour
         }
     }
 
-    private void CharMove1(Vector2 input)
+    private void CharMove1(Vector2 input, int player)
     {
         if (char1Scroller.activeInHierarchy)
         {
@@ -243,6 +252,14 @@ public class BoxManager : MonoBehaviour
                 char1TargetPos = new Vector3(-(char1ImageWidth / 2 * ((curChar1 + 1) * 2 - 1) + (curChar1 + 1) * char1Padding), char1ScrollRect.localPosition.y, char1ScrollRect.localPosition.z);
                 Debug.Log(mapTargetPos);
                 //StartCoroutine(MapMoveSmoothDamp());
+                if (player == 0)
+                {
+                    ddol.skin = curChar1;
+                }
+                else
+                {
+                    ddol.skin2 = curChar1;
+                }
             }
             char1ScrollRect.localPosition = Vector3.SmoothDamp(char1ScrollRect.localPosition, char1TargetPos, ref char1CurrentVelocity, moveTime);
             //make it select middle object
@@ -254,7 +271,7 @@ public class BoxManager : MonoBehaviour
     // todo link up the selected character with player skin.
     ////////////////////////////////////////////////////////////////
 
-    private void CharMove2(Vector2 input)
+    private void CharMove2(Vector2 input, int player)
     {
         if (char2Scroller.activeInHierarchy)
         {
@@ -267,6 +284,14 @@ public class BoxManager : MonoBehaviour
                 char2TargetPos = new Vector3(-(char2ImageWidth / 2 * ((curChar2 + 1) * 2 - 1) + (curChar2 + 1) * char2Padding), char2ScrollRect.localPosition.y, char2ScrollRect.localPosition.z);
                 Debug.Log(char2TargetPos);
                 //StartCoroutine(MapMoveSmoothDamp());
+                if(player == 0)
+                {
+                    ddol.skin = curChar2;
+                }
+                else
+                {
+                    ddol.skin2 = curChar2;
+                }
             }
             char2ScrollRect.localPosition = Vector3.SmoothDamp(char2ScrollRect.localPosition, char2TargetPos, ref char2CurrentVelocity, moveTime);
             //make it select middle object
@@ -305,12 +330,30 @@ public class BoxManager : MonoBehaviour
                 break;
             case 2:
                 BoxToggle(player, ref char1Scroller);
+                char1Borders[curChar1].SetActive(false);
+                curChar1 = player == 0 ? ddol.skin : ddol.skin2;
+                char1Borders[curChar1].SetActive(true);
+                char1TargetPos = new Vector3(-(char1ImageWidth / 2 * ((curChar1 + 1) * 2 - 1) + (curChar1 + 1) * char1Padding), char1ScrollRect.localPosition.y, char1ScrollRect.localPosition.z);
+                char1ScrollRect.localPosition = char1TargetPos;
+                char1CurrentVelocity = Vector3.zero;
                 break;
             case 3:
                 BoxToggle(player, ref char2Scroller);
+                char2Borders[curChar2].SetActive(false);
+                curChar2 = player == 0 ? ddol.skin : ddol.skin2;
+                char2Borders[curChar2].SetActive(true);
+                char2TargetPos = new Vector3(-(char2ImageWidth / 2 * ((curChar2 + 1) * 2 - 1) + (curChar2 + 1) * char2Padding), char2ScrollRect.localPosition.y, char2ScrollRect.localPosition.z);
+                char2ScrollRect.localPosition = char2TargetPos;
+                char2CurrentVelocity = Vector3.zero;
                 break;
             case 4:
                 BoxToggle(player, ref mapScroller);
+                mapBorders[curMap].SetActive(false);
+                curMap = ddol.map;
+                mapBorders[curMap].SetActive(true);
+                mapTargetPos = new Vector3(-(mapImageWidth / 2 * ((curMap + 1) * 2 - 1) + (curMap + 1) * mapPadding), mapScrollRect.localPosition.y, mapScrollRect.localPosition.z);
+                mapScrollRect.localPosition = mapTargetPos;
+                mapCurrentVelocity = Vector3.zero;
                 break;
             case 5:
                 mainMenu.LoadScene(mapIndex[curMap]); // make this change scenes depending on map
