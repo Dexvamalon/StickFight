@@ -3105,6 +3105,52 @@ AnimationClip:
     path: Graphics/Head
     classID: 114
     script: {fileID: 11500000, guid: 8ae9a6b2456cbd4439a4da84ce3e6374, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.45833334
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.5416667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: dodged
+    path: HurtBox
+    classID: 114
+    script: {fileID: 11500000, guid: 8939132c91864fb4eb28dabbc31047c4, type: 3}
   m_PPtrCurves:
   - curve:
     - time: 0
@@ -3424,6 +3470,13 @@ AnimationClip:
       path: 436964650
       attribute: 745637260
       script: {fileID: 11500000, guid: 8ae9a6b2456cbd4439a4da84ce3e6374, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 428682174
+      attribute: 2454489889
+      script: {fileID: 11500000, guid: 8939132c91864fb4eb28dabbc31047c4, type: 3}
       typeID: 114
       customType: 0
       isPPtrCurve: 0
@@ -11026,6 +11079,52 @@ AnimationClip:
     path: Graphics
     classID: 4
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.45833334
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.5416667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: dodged
+    path: HurtBox
+    classID: 114
+    script: {fileID: 11500000, guid: 8939132c91864fb4eb28dabbc31047c4, type: 3}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2

@@ -4040,6 +4040,10 @@ PrefabInstance:
       propertyPath: spriteIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3489222161668569684, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
+      propertyPath: dodged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3489222162509291001, guid: 1278141aaf9ce4b6cb08df63fa2e4f28, type: 3}
       propertyPath: m_LocalScale.y
       value: 1

@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public PlayerControls playerControls { get; private set; }
     [SerializeField] private SpriteRenderer _sr;
     DontDestroyOnLoad ddol;
+    PlayerHealth playerHealth;
 
     #endregion
     #region movment
@@ -107,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         coolDowns = GetComponent<CoolDowns>();
         ddol = FindObjectOfType<DontDestroyOnLoad>();
+        playerHealth = GetComponentInChildren<PlayerHealth>();
 
         lastPos = transform.position;
     }

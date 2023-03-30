@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-     [HideInInspector] public float health { get; private set; }
-     public float maxHealth { get; private set; } = 100f;
+    [HideInInspector] public float health { get; private set; }
+    public float maxHealth { get; private set; } = 100f;
+    [SerializeField] private float incicibilityDuration;
+    private bool _indefatigable = false;
+    public bool dodged = false;
 
     [HideInInspector] public int stocks { get; private set; }
     private int maxStocks = 3;
@@ -33,50 +36,61 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public IEnumerator Invicibility()
+    {
+        _indefatigable = true;
+        yield return new WaitForSeconds(incicibilityDuration);
+        _indefatigable = false;
+    }
+
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        Debug.Log(gameObject.name + " took " + damage + " damage");
-
-        if(transform.root.tag == "Player1")
-        {
-            ddol.dmgRecieved += damage;
-        }
-        else
-        {
-            ddol.dmgRecieved2 += damage;
-        }
-
-        if (health <= 0 && stocks > 1)
-        {
-            onStockLost?.Invoke(transform.root.tag);
-
-            stocks--;
-            health = maxHealth;
+        if (!_indefatigable || !dodged)
+        { 
+            health -= damage;
+            StartCoroutine(Invicibility());
+            Debug.Log(gameObject.name + " took " + damage + " damage");
 
             if (transform.root.tag == "Player1")
             {
-                ddol.stocksLeft = stocks;
+                ddol.dmgRecieved += damage;
             }
             else
             {
-                ddol.stocksLeft2 = stocks;
+                ddol.dmgRecieved2 += damage;
             }
 
-            Debug.Log(gameObject.name + " is dead");
-        }
-        else if (health <= 0 && stocks <= 1)
-        {
-            onPlayerDeath?.Invoke();
-            if (transform.root.tag == "Player1")
+            if (health <= 0 && stocks > 1)
             {
-                ddol.player1Win = false;
-                ddol.stocksLeft = stocks;
+                onStockLost?.Invoke(transform.root.tag);
+
+                stocks--;
+                health = maxHealth;
+
+                if (transform.root.tag == "Player1")
+                {
+                    ddol.stocksLeft = stocks;
+                }
+                else
+                {
+                    ddol.stocksLeft2 = stocks;
+                }
+
+                Debug.Log(gameObject.name + " is dead");
             }
-            else
+            else if (health <= 0 && stocks <= 1)
             {
-                ddol.player1Win = true;
-                ddol.stocksLeft2 = stocks;
+                onPlayerDeath?.Invoke();
+                if (transform.root.tag == "Player1")
+                {
+                    ddol.player1Win = false;
+                    ddol.stocksLeft = stocks;
+                }
+                else
+                {
+                    ddol.player1Win = true;
+                    ddol.stocksLeft2 = stocks;
+                }
             }
         }
     }
