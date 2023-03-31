@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(!hasSword)
+        if (!hasSword)
         {
             if (transform.root.tag == "Player1")
             {
@@ -171,12 +171,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isPlayer1)
         {
-            playerControls.Player.Move.ReadValue<Vector2>();
             inputVector = playerControls.Player.Move.ReadValue<Vector2>();
         }
         else
         {
-            playerControls.Player2.Move.ReadValue<Vector2>();
             inputVector = playerControls.Player2.Move.ReadValue<Vector2>();
         }
 

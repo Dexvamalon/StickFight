@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (!_indefatigable || !dodged)
+        if (!_indefatigable && !dodged)
         { 
             health -= damage;
             StartCoroutine(Invicibility());
