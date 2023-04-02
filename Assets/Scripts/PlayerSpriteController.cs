@@ -21,7 +21,6 @@ public class PlayerSpriteController : MonoBehaviour
     private int orderInLayer = 0;
     private int parentOrderInLayer;
 
-
     SpriteRenderer parentSpriteRenderer;
     SpriteRenderer spriteRenderer;
     DontDestroyOnLoad ddol;
@@ -90,4 +89,8 @@ public class PlayerSpriteController : MonoBehaviour
         spriteRenderer.sprite = directions[spriteIndex][Mathf.Clamp(skinIndex, 0, directions[spriteIndex].Count - 1)];
     }
 
+    public void SetMaterial(Material mat)
+    {
+        spriteRenderer.material = mat;
+    }
 }

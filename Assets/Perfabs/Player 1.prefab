@@ -925,6 +925,7 @@ MonoBehaviour:
   neutralAttackBuffer: 0.1
   attackBuffer: 0.1
   dashBuffer: 0.1
+  specialBuffer: 0.1
   hasSword: 1
   SwordPickUpDelay: 1
 --- !u!114 &3489222162541293757
@@ -940,17 +941,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashCdAfterDash: 0.6
-  attackCdAfterDash: 0.6
-  neutralCdAfterDash: 0.6
+  attackCdAfterDash: 0.3
+  neutralCdAfterDash: 0.3
   MoveCdAfterDash: 0.5
+  SpecialCdAfterDash: 0.6
   dashCdAfterAttack: 0.7
   attackCdAfterAttack: 1
   neutralCdAfterAttack: 0.7
   MoveCdAfterAttack: 0.5
+  SpecialCdAfterAttack: 0.7
   dashCdAfterNeutral: 0.7
   attackCdAfterNeutral: 0.7
   neutralCdAfterNeutral: 1
   MoveCdAfterNeutral: 0.5
+  SpecialCdAfterNeutral: 0.7
+  dashCdAfterHit: 0.5
+  attackCdAfterHit: 0.7
+  neutralCdAfterHit: 0.7
+  MoveCdAfterHit: 0.2
+  SpecialCdAfterHit: 1
+  playerSpriteControllers:
+  - {fileID: 1000267048}
+  - {fileID: 3043692743208639493}
+  - {fileID: 4751802964287465235}
+  - {fileID: 8146520661261842929}
+  - {fileID: 6198901872343572868}
+  - {fileID: 7029188822287873996}
+  - {fileID: 4222588073598973293}
+  - {fileID: 805491484231895938}
+  - {fileID: 5547119602953279116}
+  - {fileID: 8221556871546609968}
+  - {fileID: 3118471431719201900}
+  - {fileID: 1744686729}
+  normalMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  lightMaterial: {fileID: 2100000, guid: eb61ebe460403404594ae0d8be39602f, type: 2}
 --- !u!54 &3489222162541293759
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1040,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8939132c91864fb4eb28dabbc31047c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incicibilityDuration: 1
+  incicibilityDuration: 0.3
   dodged: 0
 --- !u!1 &4788314775894484244
 GameObject:

@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public event Action onPlayerDeath;
 
     DontDestroyOnLoad ddol;
+    private CoolDowns coolDowns;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         stocks = maxStocks;
 
         ddol = FindObjectOfType<DontDestroyOnLoad>();
+        coolDowns = transform.root.GetComponent<CoolDowns>();
 
         if (transform.root.tag == "Player1")
         {
@@ -49,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
         { 
             health -= damage;
             StartCoroutine(Invicibility());
+            coolDowns.HitCoolDown();
             Debug.Log(gameObject.name + " took " + damage + " damage");
 
             if (transform.root.tag == "Player1")

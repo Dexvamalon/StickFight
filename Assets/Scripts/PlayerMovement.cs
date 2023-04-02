@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float neutralAttackBuffer = 0.1f;
     [SerializeField] private float attackBuffer = 0.1f;
     [SerializeField] private float dashBuffer = 0.1f;
+    [SerializeField] private float specialBuffer = 0.1f;
 
     #endregion
     #region facing direction
@@ -141,15 +142,29 @@ public class PlayerMovement : MonoBehaviour
 
     public void SpecialPerformed(InputAction.CallbackContext context)
     {
-        if (transform.root.tag == "Player1")
+        if (!coolDowns.canSpecial)
         {
-            ddol.specialAmount++;
+            BufferCoroutineStarter(specialBuffer);
+            inputBufferPointer = SpecialChecker;
+            StartCoroutine(FrameChecker());
         }
         else
         {
-            ddol.specialAmount2++;
-        }
+            if (transform.root.tag == "Player1")
+            {
+                ddol.specialAmount++;
+            }
+            else
+            {
+                ddol.specialAmount2++;
+            }
 
+            Special();
+        }
+    }
+
+    public void Special()
+    {
         if (!hasSword)
         {
             OnSwordPickUp?.Invoke(transform.tag, SwordPickUpDelay);
@@ -241,16 +256,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void AttackPerformed(InputAction.CallbackContext context)
     {
-        Debug.Log(coolDowns.canNeutralAttack);
+        Debug.Log(coolDowns.CanNeutralAttack);
         //int[] nice = new int[2];
         //nice[8] = 4;
 
         if (inputVector == Vector2.zero)
         {
-            Debug.Log(coolDowns.canNeutralAttack);
+            Debug.Log(coolDowns.CanNeutralAttack);
             
 
-            if (!coolDowns.canNeutralAttack)
+            if (!coolDowns.CanNeutralAttack)
             {
                 BufferCoroutineStarter(neutralAttackBuffer);
                 inputBufferPointer = NeutralAttackChecker;
@@ -306,6 +321,12 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
     }
+    private void SpecialChecker() {
+        if (coolDowns.canSpecial) {
+            waiting = false;
+            Special();
+        }
+    }
 
     private void AttackChecker() {
         if (coolDowns.canAttack) {
@@ -315,7 +336,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void NeutralAttackChecker() {
-        if (coolDowns.canNeutralAttack) {
+        if (coolDowns.CanNeutralAttack) {
             waiting = false;
             NeutralAttack();    
         }
