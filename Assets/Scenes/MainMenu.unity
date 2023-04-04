@@ -6417,7 +6417,7 @@ MonoBehaviour:
   - {fileID: 491959770}
   - {fileID: 713342888}
   - {fileID: 119747047}
-  mapIndex: 01000000010000000100000001000000
+  mapIndex: 01000000050000000100000001000000
   char1Scroller: {fileID: 842279032}
   char1ScrollRect: {fileID: 744389017}
   char1ImageWidth: 110
