@@ -13,6 +13,10 @@ public class PlayerGraphics : MonoBehaviour
     GameObject playerSword;
     DontDestroyOnLoad ddol;
 
+    [SerializeField] private List<PlayerSpriteController> playerSpriteControllers = new List<PlayerSpriteController>();
+    [SerializeField] private PlayerSpriteController playerSpriteControllerWeapon;
+    bool _isPlayer1;
+
     private void Awake()
     {
         playerAnimator = GetComponentInParent<Animator>();
@@ -43,6 +47,17 @@ public class PlayerGraphics : MonoBehaviour
         playerMovement.OnSwordPickUp += PlayerMovement_OnSwordPickUp;
 
         ddol = FindObjectOfType<DontDestroyOnLoad>();
+
+        _isPlayer1 = transform.root.tag == "Player1" ? true : false;
+    }
+
+    private void Update()
+    {
+        foreach (PlayerSpriteController i in playerSpriteControllers)
+        {
+            i.skinIndex = _isPlayer1 ? ddol.skin : ddol.skin2;
+        }
+        playerSpriteControllerWeapon.skinIndex = _isPlayer1 ? ddol.weapon : ddol.weapon2;
     }
 
     private void PlayerMovement_OnSwordPickUp(string player, float pickUpDelay)

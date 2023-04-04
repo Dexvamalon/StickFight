@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3aa37279d02b04616bc92b70579c9ea2
   - enabled: 1
-    path: Assets/Scenes/Scene.unity
+    path: Assets/Scenes/Mountain_map.unity
     guid: 9823b88417a4a884cb0b1b1d50b3d279
   - enabled: 1
     path: Assets/Scenes/Unused scenes/SampleScene.unity

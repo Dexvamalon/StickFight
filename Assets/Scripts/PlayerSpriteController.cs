@@ -13,7 +13,7 @@ public class PlayerSpriteController : MonoBehaviour
     [SerializeField] private List<Sprite> skinUp;
     [SerializeField] private List<Sprite> skinSide;
 
-    private int skinIndex = 0;
+    public int skinIndex = 0;
 
     [SerializeField] bool isPartOfSkin = true;
 

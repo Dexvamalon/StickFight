@@ -286,11 +286,11 @@ public class BoxManager : MonoBehaviour
                 //StartCoroutine(MapMoveSmoothDamp());
                 if(player == 0)
                 {
-                    ddol.skin = curChar2;
+                    ddol.weapon = curChar2;
                 }
                 else
                 {
-                    ddol.skin2 = curChar2;
+                    ddol.weapon2 = curChar2;
                 }
             }
             char2ScrollRect.localPosition = Vector3.SmoothDamp(char2ScrollRect.localPosition, char2TargetPos, ref char2CurrentVelocity, moveTime);
@@ -340,7 +340,7 @@ public class BoxManager : MonoBehaviour
             case 3:
                 BoxToggle(player, ref char2Scroller);
                 char2Borders[curChar2].SetActive(false);
-                curChar2 = player == 0 ? ddol.skin : ddol.skin2;
+                curChar2 = player == 0 ? ddol.weapon : ddol.weapon2;
                 char2Borders[curChar2].SetActive(true);
                 char2TargetPos = new Vector3(-(char2ImageWidth / 2 * ((curChar2 + 1) * 2 - 1) + (curChar2 + 1) * char2Padding), char2ScrollRect.localPosition.y, char2ScrollRect.localPosition.z);
                 char2ScrollRect.localPosition = char2TargetPos;

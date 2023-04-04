@@ -107,6 +107,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: 777875376, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: 777875376, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &1478025000243213155
 GameObject:
@@ -215,6 +216,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: -1857922004, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: -1857922004, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &1738917298948388589
 GameObject:
@@ -323,6 +325,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: 1991421554, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: 1991421554, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &1891997619436582017
 GameObject:
@@ -431,6 +434,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: -490526912, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: -490526912, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &2681963628199729061
 GameObject:
@@ -539,6 +543,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: -1230432938, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: -1230432938, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &3071532716539069952
 GameObject:
@@ -647,6 +652,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: 311592190, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: 311592190, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &3479265561476317960
 GameObject:
@@ -755,6 +761,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: -265867553, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: -265867553, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &3489222162509290998
 GameObject:
@@ -865,6 +872,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858391d7e984b3a44868766fbf0cacae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpriteControllers:
+  - {fileID: 1000267048}
+  - {fileID: 3043692743208639493}
+  - {fileID: 4751802964287465235}
+  - {fileID: 8146520661261842929}
+  - {fileID: 6198901872343572868}
+  - {fileID: 7029188822287873996}
+  - {fileID: 4222588073598973293}
+  - {fileID: 805491484231895938}
+  - {fileID: 5547119602953279116}
+  - {fileID: 8221556871546609968}
+  - {fileID: 3118471431719201900}
+  playerSpriteControllerWeapon: {fileID: 1744686729}
 --- !u!1 &3489222162541293748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1187,7 @@ MonoBehaviour:
   skinDown: []
   skinUp: []
   skinSide: []
+  skinIndex: 0
   isPartOfSkin: 0
 --- !u!1 &5101423515194490867
 GameObject:
@@ -1275,6 +1296,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: -476136464, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: -476136464, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &5587301217641993271
 GameObject:
@@ -1383,6 +1405,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: 682212461, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: -490526912, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &6154488484330601684
 GameObject:
@@ -1491,6 +1514,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: 260939996, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: 260939996, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &6321532096646287901
 GameObject:
@@ -1654,6 +1678,7 @@ MonoBehaviour:
   skinSide:
   - {fileID: 1465025424, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
   - {fileID: 1465025424, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  skinIndex: 0
   isPartOfSkin: 1
 --- !u!1 &8581377996785968910
 GameObject:
