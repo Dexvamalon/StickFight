@@ -4680,6 +4680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Info
       objectReference: {fileID: 0}
+    - target: {fileID: 4200094371225568417, guid: e733bb1cf00ed45eb87effd581d827ae, type: 3}
+      propertyPath: skin
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6374574883710200914, guid: e733bb1cf00ed45eb87effd581d827ae, type: 3}
       propertyPath: m_RootOrder
       value: 17
