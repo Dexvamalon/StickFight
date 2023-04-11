@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SpriteRenderer _sr;
     DontDestroyOnLoad ddol;
     PlayerHealth playerHealth;
+    AudioManager audioManager;
 
     #endregion
     #region movment
@@ -79,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
+    private bool isMoving = false;
+
     #endregion
 
     #region code
@@ -110,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         coolDowns = GetComponent<CoolDowns>();
         ddol = FindObjectOfType<DontDestroyOnLoad>();
         playerHealth = GetComponentInChildren<PlayerHealth>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         lastPos = transform.position;
     }
@@ -195,6 +199,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputVector != new Vector2(0, 0))
         {
+            if (isMoving == false)
+                audioManager.Play("Walk");
+            isMoving = true;
+
             if (coolDowns.canMove)
             {
                 playerRb.velocity = new Vector3(inputVector.x * movementSpeed, 0.0f, inputVector.y * movementSpeed);
@@ -225,6 +233,12 @@ public class PlayerMovement : MonoBehaviour
                 OnFacing?.Invoke(attackDir);
                 Debug.Log("Turnnnnnnn,,,,,,..... " + attackDir + " y");
             }
+        }
+        else
+        {
+            if(isMoving == true)
+                audioManager.Stop("Walk");
+            isMoving = false;
         }
 
         if(Mathf.Abs(playerRb.velocity.x) > movementEventSpeed || Mathf.Abs(playerRb.velocity.z) > movementEventSpeed)
@@ -352,12 +366,14 @@ public class PlayerMovement : MonoBehaviour
     {
         coolDowns.NeutralAttackCoolDown();
         OnNeutralAttack?.Invoke();
+        audioManager.Play("NeutralAttack");
     }
 
     private void Attack()
     {
         coolDowns.AttackCoolDown();
         OnAttack?.Invoke();
+        audioManager.Play("Attack");
     }
 
     private void StartDash()

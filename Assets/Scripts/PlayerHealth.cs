@@ -50,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
         if (!_indefatigable && !dodged)
         { 
             health -= damage;
+            FindObjectOfType<AudioManager>().Play("Hit");
             StartCoroutine(Invicibility());
             coolDowns.HitCoolDown();
             Debug.Log(gameObject.name + " took " + damage + " damage");
