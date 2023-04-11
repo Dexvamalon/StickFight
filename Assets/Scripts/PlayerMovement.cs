@@ -398,6 +398,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnDestroy()
     {
         StopAllCoroutines();
+        audioManager = null;
         playerControls.Player.Dash.performed -= Dash;
         playerControls.Player.Attack.performed -= AttackPerformed;
         playerControls.Player.Special.performed -= SpecialPerformed;
