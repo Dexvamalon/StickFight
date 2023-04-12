@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MatchStatsFiller : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class MatchStatsFiller : MonoBehaviour
     [SerializeField] GameObject win;
     [SerializeField] GameObject win2;
     [SerializeField] TextMeshProUGUI matchTimeSquare;
+
+    [SerializeField] Image player1Image;
+    [SerializeField] Image player2Image;
+    [SerializeField] Sprite[] playerIcons;
 
     DontDestroyOnLoad ddol;
 
@@ -54,7 +59,10 @@ public class MatchStatsFiller : MonoBehaviour
         stocksLeft2Square.text = ddol.stocksLeft2.ToString();
         timeUnarmed2Square.text = ddol.timeUnarmed2.ToString();
 
-        if(Mathf.FloorToInt(ddol.matchTime / 60) == 0)
+        player1Image.sprite = playerIcons[ddol.skin];
+        player2Image.sprite = playerIcons[ddol.skin2];
+
+        if (Mathf.FloorToInt(ddol.matchTime / 60) == 0)
         {
             matchTime = (Mathf.RoundToInt(ddol.matchTime)).ToString();
         }

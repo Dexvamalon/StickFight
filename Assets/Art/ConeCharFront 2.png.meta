@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 369bc3b16552d46fa9e641f161a5caad
+guid: 6f77c1042b75f1945962ce61487ad17b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cone_Char_Side_2_0
+      name: Cone_Char_Front_1_0
       rect:
         serializedVersion: 2
         x: 833
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_1
+      name: Cone_Char_Front_1_1
       rect:
         serializedVersion: 2
         x: 2127
@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_2
+      name: Cone_Char_Front_1_2
       rect:
         serializedVersion: 2
         x: 1445
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_3
+      name: Cone_Char_Front_1_3
       rect:
         serializedVersion: 2
         x: 1787
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_4
+      name: Cone_Char_Front_1_4
       rect:
         serializedVersion: 2
         x: 1449
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_5
+      name: Cone_Char_Front_1_5
       rect:
         serializedVersion: 2
         x: 1787
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_6
+      name: Cone_Char_Front_1_6
       rect:
         serializedVersion: 2
         x: 2132
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_7
+      name: Cone_Char_Front_1_7
       rect:
         serializedVersion: 2
         x: 2128
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_8
+      name: Cone_Char_Front_1_8
       rect:
         serializedVersion: 2
         x: 952
@@ -306,7 +306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_9
+      name: Cone_Char_Front_1_9
       rect:
         serializedVersion: 2
         x: 954
@@ -327,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cone_Char_Side_2_10
+      name: Cone_Char_Front_1_10
       rect:
         serializedVersion: 2
         x: 1451
@@ -358,20 +358,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cone_Char_Side_2_3: -490526912
-      Cone_Char_Side_2_0: -1857922004
-      Cone_Char_Side_2_4: 1465025424
-      Cone_Char_Side_2_6: -265867553
-      Cone_Char_Side_2_9: 1991421554
-      Cone_Char_Side_2_1: 777875376
-      Cone_Char_Side_2_7: -1230432938
-      Cone_Char_Side_2_5: 311592190
-      Cone_Char_Side_2_10: 260939996
-      Cone_Char_Side_2_8: -476136464
-      Cone_Char_Side_2_2: 682212461
+      Cone_Char_Front_1_7: -1230432938
+      Cone_Char_Front_1_5: 311592190
+      Cone_Char_Front_1_4: 1465025424
+      Cone_Char_Front_1_6: -265867553
+      Cone_Char_Front_1_3: -490526912
+      Cone_Char_Front_1_10: 260939996
+      Cone_Char_Front_1_8: -476136464
+      Cone_Char_Front_1_9: 1991421554
+      Cone_Char_Front_1_1: 777875376
+      Cone_Char_Front_1_2: 682212461
+      Cone_Char_Front_1_1_0: -1857922004
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

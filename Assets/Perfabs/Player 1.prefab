@@ -105,11 +105,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: 777875376, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: 777875376, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: 777875376, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: 777875376, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: 777875376, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: 777875376, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: 777875376, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &1478025000243213155
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,11 +218,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: -1857922004, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: -1857922004, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: -1857922004, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: -1857922004, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: -1857922004, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: -1857922004, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: -1857922004, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &1738917298948388589
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,11 +331,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: 1991421554, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: 1991421554, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: 1991421554, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: 1991421554, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: 1991421554, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: 1991421554, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: 1991421554, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &1891997619436582017
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,11 +444,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: -490526912, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: -490526912, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: -490526912, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: -490526912, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: -490526912, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: -490526912, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: -490526912, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &2681963628199729061
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,11 +557,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: -1230432938, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: -1230432938, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: -1230432938, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: -1230432938, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: -1230432938, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: -1230432938, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: -1230432938, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &3071532716539069952
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,11 +670,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: 311592190, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: 311592190, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: 311592190, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: 311592190, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: 311592190, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: 311592190, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: 311592190, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &3479265561476317960
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,11 +783,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: -265867553, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: -265867553, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: -265867553, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: -265867553, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: -265867553, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: -265867553, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: -265867553, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &3489222162509290998
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +833,7 @@ Transform:
   - {fileID: 8748930137406884565}
   - {fileID: 57613615475194142}
   - {fileID: 8430518711181706259}
+  - {fileID: 5029065178944825000}
   m_Father: {fileID: 1660953589966276709}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
@@ -1191,11 +1213,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteIndex: 1
-  skinDown: []
-  skinUp: []
-  skinSide: []
+  skinDown:
+  - {fileID: 21300000, guid: 4403bc34acea346519629d6d47406597, type: 3}
+  - {fileID: 21300000, guid: 710c25c61d305f14bb3a135191fcf0a2, type: 3}
+  - {fileID: 21300000, guid: cef51d4a568d0c745972f5d280ad012e, type: 3}
+  - {fileID: 21300000, guid: 415c61cb77ef5234f87274cb8040d397, type: 3}
+  skinUp:
+  - {fileID: 21300000, guid: 4403bc34acea346519629d6d47406597, type: 3}
+  - {fileID: 21300000, guid: 710c25c61d305f14bb3a135191fcf0a2, type: 3}
+  - {fileID: 21300000, guid: c9cf6420f2f0a3442b5153b3a5387746, type: 3}
+  - {fileID: 21300000, guid: 415c61cb77ef5234f87274cb8040d397, type: 3}
+  skinSide:
+  - {fileID: 21300000, guid: 4403bc34acea346519629d6d47406597, type: 3}
+  - {fileID: 21300000, guid: 710c25c61d305f14bb3a135191fcf0a2, type: 3}
+  - {fileID: 21300000, guid: c9cf6420f2f0a3442b5153b3a5387746, type: 3}
+  - {fileID: -1857922004, guid: 6f77c1042b75f1945962ce61487ad17b, type: 3}
   skinIndex: 0
   isPartOfSkin: 0
+  isPartOfWeapon: 1
 --- !u!1 &5101423515194490867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,11 +1336,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: -476136464, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: -476136464, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: -476136464, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: -476136464, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: -476136464, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: -476136464, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: -476136464, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &5587301217641993271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,11 +1449,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: 682212461, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: 682212461, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: 682212461, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: 682212461, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: -490526912, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: 682212461, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: 682212461, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &6154488484330601684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,11 +1562,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: 260939996, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: 260939996, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: 260939996, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: 260939996, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: 260939996, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: 260939996, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: 260939996, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &6321532096646287901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1625,110 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &6831112079925186908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5029065178944825000}
+  - component: {fileID: 4484019035495169191}
+  - component: {fileID: 1385989663686155726}
+  m_Layer: 0
+  m_Name: Shadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5029065178944825000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831112079925186908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.039999772, y: -1.182, z: 0}
+  m_LocalScale: {x: 5.4386, y: 3.3700001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3489222162509291001}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4484019035495169191
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831112079925186908}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 4
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: 6cd45a19571135b4d8880c51f579954a, type: 3}
+  m_Color: {r: 0.21203497, g: 0.18431373, b: 0.21960784, a: 0.46666667}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.2, y: 0.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1385989663686155726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831112079925186908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae9a6b2456cbd4439a4da84ce3e6374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteIndex: 1
+  skinDown: []
+  skinUp: []
+  skinSide: []
+  skinIndex: 0
+  isPartOfSkin: 0
+  isPartOfWeapon: 0
 --- !u!1 &8220314163073176462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,11 +1834,14 @@ MonoBehaviour:
   skinUp:
   - {fileID: 1465025424, guid: cc9d26a5750444a748afd99bbe3ebb87, type: 3}
   - {fileID: 1465025424, guid: 92b3f349a12854aeebe709ba7d4b79fa, type: 3}
+  - {fileID: 1465025424, guid: fd7460b6a4c5593468821bd40469dfc0, type: 3}
   skinSide:
   - {fileID: 1465025424, guid: 8464b63252cc44ff0b8674a3e83fdb3a, type: 3}
-  - {fileID: 1465025424, guid: 369bc3b16552d46fa9e641f161a5caad, type: 3}
+  - {fileID: 1465025424, guid: c51c0727acb76864d80cfd9265c2d4f0, type: 3}
+  - {fileID: 1465025424, guid: 9abee2e168ea50f448dad6682a373132, type: 3}
   skinIndex: 0
   isPartOfSkin: 1
+  isPartOfWeapon: 0
 --- !u!1 &8581377996785968910
 GameObject:
   m_ObjectHideFlags: 0

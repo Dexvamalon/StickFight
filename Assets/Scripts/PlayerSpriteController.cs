@@ -16,6 +16,7 @@ public class PlayerSpriteController : MonoBehaviour
     public int skinIndex = 0;
 
     [SerializeField] bool isPartOfSkin = true;
+    [SerializeField] bool isPartOfWeapon = true;
 
 
     private int orderInLayer = 0;
@@ -40,7 +41,7 @@ public class PlayerSpriteController : MonoBehaviour
                 skinIndex = ddol.skin2;
             }
         }
-        else
+        else if (isPartOfWeapon)
         {
             if (transform.root.tag == "Player1")
             {
@@ -76,7 +77,7 @@ public class PlayerSpriteController : MonoBehaviour
         parentOrderInLayer = parentSpriteRenderer.sortingOrder;
         spriteRenderer.sortingOrder = parentOrderInLayer + orderInLayer;
 
-        if(!isPartOfSkin)
+        if(!isPartOfSkin && !isPartOfWeapon)
         {
             return;
         }
