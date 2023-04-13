@@ -31,6 +31,5 @@ public class SwordMover : MonoBehaviour
     private void Mover(Vector2 vec)
     {
         swordRB.AddForce(new Vector3(vec.x, 0, vec.y) * launchForce, ForceMode.Impulse);
-        Debug.Log(swordRB.velocity);
     }
 }

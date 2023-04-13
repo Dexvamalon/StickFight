@@ -53,7 +53,6 @@ public class PlayerHealth : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Hit");
             StartCoroutine(Invicibility());
             coolDowns.HitCoolDown();
-            Debug.Log(gameObject.name + " took " + damage + " damage");
 
             if (transform.root.tag == "Player1")
             {
@@ -79,8 +78,6 @@ public class PlayerHealth : MonoBehaviour
                 {
                     ddol.stocksLeft2 = stocks;
                 }
-
-                Debug.Log(gameObject.name + " is dead");
             }
             else if (health <= 0 && stocks <= 1)
             {

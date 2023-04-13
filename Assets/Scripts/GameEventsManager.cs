@@ -14,6 +14,8 @@ public class GameEventsManager : MonoBehaviour
     private Vector3 swordPos;
     [SerializeField] private float swordMoveTime;
 
+    [SerializeField] Sprite[] weaponSprites;
+
     #region SwordVariables
     bool isPlayer1;
     Vector3 currentVelocity;
@@ -21,6 +23,11 @@ public class GameEventsManager : MonoBehaviour
 
     float matchStartTime;
     DontDestroyOnLoad ddol;
+
+    /*private void Start()
+    {
+        Start(player1);
+    }*/
 
     private void Start()
     {
@@ -39,6 +46,9 @@ public class GameEventsManager : MonoBehaviour
 
         ddol = FindObjectOfType<DontDestroyOnLoad>();
         matchStartTime = Time.time;
+
+        player1Sword.GetComponentInChildren<SpriteRenderer>().sprite = weaponSprites[ddol.weapon];
+        player2Sword.GetComponentInChildren<SpriteRenderer>().sprite = weaponSprites[ddol.weapon2];
     }
 
 

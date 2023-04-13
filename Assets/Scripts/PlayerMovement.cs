@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     CoolDowns coolDowns;
     private Rigidbody playerRb;
     private PlayerInput playerInput;
-    [HideInInspector] public PlayerControls playerControls { get; private set; }
+    [HideInInspector]
+    public PlayerControls playerControls { get; private set; }
     [SerializeField] private SpriteRenderer _sr;
     DontDestroyOnLoad ddol;
     PlayerHealth playerHealth;
@@ -88,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-
         playerControls = new PlayerControls();
         if(isPlayer1)
         {   playerControls.Player.Enable();
@@ -222,7 +222,6 @@ public class PlayerMovement : MonoBehaviour
                 vec.Normalize();
                 attackDir = vec;
                 OnFacing?.Invoke(attackDir);
-                Debug.Log("Turnnnnnnn,,,,,,..... " + attackDir + " x");
             }
             else if (inputVector.y != attackDir.y && inputVector.y != 0)
             {
@@ -231,7 +230,6 @@ public class PlayerMovement : MonoBehaviour
                 vec.Normalize();
                 attackDir = vec;
                 OnFacing?.Invoke(attackDir);
-                Debug.Log("Turnnnnnnn,,,,,,..... " + attackDir + " y");
             }
         }
         else
@@ -253,8 +251,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context) // TODO add dash cooldown, add input buffer.
     {
-        //Debug.Log(context);
-        //Debug.Log("Dashed! " + context.phase);
+        //.Log(context);
+        //.Log("Dashed! " + context.phase);
         
         if (!coolDowns.canDash)
         {
@@ -270,15 +268,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void AttackPerformed(InputAction.CallbackContext context)
     {
-        Debug.Log(coolDowns.CanNeutralAttack);
         //int[] nice = new int[2];
         //nice[8] = 4;
 
         if (inputVector == Vector2.zero)
         {
-            Debug.Log(coolDowns.CanNeutralAttack);
-            
-
             if (!coolDowns.CanNeutralAttack)
             {
                 BufferCoroutineStarter(neutralAttackBuffer);
@@ -317,11 +311,8 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(InputBuffer(buf));
     }
 
-
-    int i = 0;
     private IEnumerator InputBuffer(float buffer)
     {
-        Debug.Log(i++ + "wow   coiol");
         yield return new WaitForSeconds(buffer);
 
         waiting = false;
@@ -404,7 +395,7 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Player.Special.performed -= SpecialPerformed;
         playerControls.Player2.Dash.performed -= Dash;
         playerControls.Player2.Attack.performed -= AttackPerformed;
-        playerControls.Player2.Attack.performed -= SpecialPerformed;
+        playerControls.Player2.Special.performed -= SpecialPerformed;
     }
 
     #endregion

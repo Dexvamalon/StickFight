@@ -69,14 +69,29 @@ public class BoxManager : MonoBehaviour
 
     DontDestroyOnLoad ddol;
 
-    private void Start()
+    bool canSetup = true;
+
+    private void SetUpInput()
     {
+        if(!canSetup)
+        {
+            return;
+        }
         playerControls1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerMovement>().playerControls;
         playerControls2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerMovement>().playerControls;
         playerControls1.Control.Select.performed += OnSelect1;
         playerControls1.Player.Attack.performed += OnSelect1;
         playerControls2.Control2.Select.performed += OnSelect2;
         playerControls2.Player2.Attack.performed += OnSelect2;
+
+        canSetup = false;
+    }
+
+    private void Start()
+    {
+        
+        SetUpInput();
+            
 
         ddol = FindObjectOfType<DontDestroyOnLoad>();
 
@@ -88,7 +103,7 @@ public class BoxManager : MonoBehaviour
 
         mainMenu = GetComponent<MainMenu>();
 
-        playerBox = new int[] { -1, -1};
+        playerBox = new int[] { 5, 5};
         currentSlider = 2;
         tempSlider = slidersArray[currentSlider ].GetComponent<Slider>();
 
@@ -104,6 +119,7 @@ public class BoxManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         Move();
     }
 
@@ -114,7 +130,7 @@ public class BoxManager : MonoBehaviour
         {
             playerBox[player] = box;
         }
-        else
+        else if (playerBox[player] == box)
         {
             playerBox[player] = -1;
         }
@@ -122,6 +138,23 @@ public class BoxManager : MonoBehaviour
 
     private void Move()
     {
+        /*if(playerControls1== null || playerControls2 == null)
+        {
+            SetUpInput();
+        }*/
+        if (playerControls1 == null || playerControls2 == null)
+        {
+            if (GameObject.FindGameObjectWithTag("Player1") != null && GameObject.FindGameObjectWithTag("Player2") != null)
+            {
+                SetUpInput();
+            }
+            else
+            {
+                Debug.LogWarning("Can't find players");
+                return;
+            }
+        }
+
         inputVector[0] = playerControls1.Control.Move.ReadValue<Vector2>();
         inputVector[1] = playerControls2.Control2.Move.ReadValue<Vector2>();
 
@@ -160,7 +193,6 @@ public class BoxManager : MonoBehaviour
             if(input.y < 0 && input.y != lastFrameYMovement)
             {
                 currentSlider = Mathf.Clamp(currentSlider-1, 0, 2);
-                Debug.Log(currentSlider);
                 tempSlider.transform.Find("Handle Slide Area").GetComponentInChildren<Image>().color = Color.white;
                 tempSlider = slidersArray[currentSlider].GetComponent<Slider>();
                 tempSlider.transform.Find("Handle Slide Area").GetComponentInChildren<Image>().color = new Color(0.5f, 1, 1);
@@ -168,7 +200,6 @@ public class BoxManager : MonoBehaviour
             if (input.y > 0 && input.y != lastFrameYMovement)
             {
                 currentSlider = Mathf.Clamp(currentSlider+1, 0, 2);
-                Debug.Log(currentSlider);
                 tempSlider.transform.Find("Handle Slide Area").GetComponentInChildren<Image>().color = Color.white;
                 tempSlider = slidersArray[currentSlider].GetComponent<Slider>();
                 tempSlider.transform.Find("Handle Slide Area").GetComponentInChildren<Image>().color = new Color(0.5f, 1, 1);
@@ -227,9 +258,7 @@ public class BoxManager : MonoBehaviour
                 mapBorders[curMap].SetActive(false);
                 curMap = Mathf.Clamp(curMap + (int)input.x, 0, mapCount-1);// set clamp to be right
                 mapBorders[curMap].SetActive(true);
-                Debug.Log(curMap);
                 mapTargetPos = new Vector3(-(mapImageWidth / 2 * ((curMap+1) * 2 - 1) + (curMap + 1) * mapPadding), mapScrollRect.localPosition.y, mapScrollRect.localPosition.z);
-                Debug.Log(mapTargetPos);
                 //StartCoroutine(MapMoveSmoothDamp());
                 ddol.map = curMap;
             }
@@ -248,9 +277,7 @@ public class BoxManager : MonoBehaviour
                 char1Borders[curChar1].SetActive(false);
                 curChar1 = Mathf.Clamp(curChar1 + (int)input.x, 0, char1Count - 1);// set clamp to be right
                 char1Borders[curChar1].SetActive(true);
-                Debug.Log(curChar1);
                 char1TargetPos = new Vector3(-(char1ImageWidth / 2 * ((curChar1 + 1) * 2 - 1) + (curChar1 + 1) * char1Padding), char1ScrollRect.localPosition.y, char1ScrollRect.localPosition.z);
-                Debug.Log(mapTargetPos);
                 //StartCoroutine(MapMoveSmoothDamp());
                 if (player == 0)
                 {
@@ -280,9 +307,7 @@ public class BoxManager : MonoBehaviour
                 char2Borders[curChar2].SetActive(false);
                 curChar2 = Mathf.Clamp(curChar2 + (int)input.x, 0, char2Count - 1);// set clamp to be right
                 char2Borders[curChar2].SetActive(true);
-                Debug.Log(curChar2);
                 char2TargetPos = new Vector3(-(char2ImageWidth / 2 * ((curChar2 + 1) * 2 - 1) + (curChar2 + 1) * char2Padding), char2ScrollRect.localPosition.y, char2ScrollRect.localPosition.z);
-                Debug.Log(char2TargetPos);
                 //StartCoroutine(MapMoveSmoothDamp());
                 if(player == 0)
                 {

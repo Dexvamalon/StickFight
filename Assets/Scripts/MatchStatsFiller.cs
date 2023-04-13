@@ -46,18 +46,18 @@ public class MatchStatsFiller : MonoBehaviour
         attackAmountSquare.text = ddol.attackAmount.ToString();
         dodgeAmountSquare.text = ddol.dodgeAmount.ToString();
         specialAmountSquare.text = ddol.specialAmount.ToString();
-        distanceMovedSquare.text = ddol.distanceMoved.ToString();
+        distanceMovedSquare.text = Mathf.FloorToInt(ddol.distanceMoved).ToString();
         stocksLeftSquare.text = ddol.stocksLeft.ToString();
-        timeUnarmedSquare.text = ddol.timeUnarmed.ToString();
+        timeUnarmedSquare.text = Mathf.FloorToInt(ddol.timeUnarmed).ToString();
 
         dmgDealt2Square.text = ddol.dmgDealt2.ToString();
         dmgRecieved2Square.text = ddol.dmgRecieved2.ToString();
         attackAmount2Square.text = ddol.attackAmount2.ToString();
         dodgeAmount2Square.text = ddol.dodgeAmount2.ToString();
         specialAmount2Square.text = ddol.specialAmount2.ToString();
-        distanceMoved2Square.text = ddol.distanceMoved2.ToString();
+        distanceMoved2Square.text = Mathf.FloorToInt(ddol.distanceMoved2).ToString();
         stocksLeft2Square.text = ddol.stocksLeft2.ToString();
-        timeUnarmed2Square.text = ddol.timeUnarmed2.ToString();
+        timeUnarmed2Square.text = Mathf.FloorToInt(ddol.timeUnarmed2).ToString();
 
         player1Image.sprite = playerIcons[ddol.skin];
         player2Image.sprite = playerIcons[ddol.skin2];

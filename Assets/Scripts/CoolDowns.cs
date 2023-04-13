@@ -50,11 +50,6 @@ public class CoolDowns : MonoBehaviour
 
     private int mainIndex;
 
-    private void Start()
-    {
-        UnityEngine.Debug.Log(CanNeutralAttack);
-    }
-
     public void DashCoolDown()
     {
         canDash = false;
@@ -125,7 +120,7 @@ public class CoolDowns : MonoBehaviour
         StartCoroutine(CoolDown(SpecialCdAfterNeutral, "canSpecial", 2));
 
     }
-    int x =0;
+
     public IEnumerator CoolDown(float timer, string name, int coroutineIndex)
     {
         yield return new WaitForSeconds(timer);
@@ -148,9 +143,6 @@ public class CoolDowns : MonoBehaviour
             case "canNeutralAttack":
                 if (coroutineIndex == mainIndex)
                 { CanNeutralAttack = true;
-                    x++;
-                    UnityEngine.Debug.Log(x);
-                    UnityEngine.Debug.Log(Time.time - y);
                     SetMaterial("default");
                 }
                 break;
@@ -167,7 +159,6 @@ public class CoolDowns : MonoBehaviour
 
             default:
                 UnityEngine.Debug.Log("no corect variable entered!");
-                UnityEngine.Debug.Break();
                 break;
 
         }
@@ -210,7 +201,7 @@ public class CoolDowns : MonoBehaviour
     private void Start()
     {
         CoolMethod(out b);
-        Debug.Log(b);
+        .Log(b);
     }
 
     private void CoolMethod(out bool a)

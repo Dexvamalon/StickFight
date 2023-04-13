@@ -59,7 +59,6 @@ public class PlayerSpriteController : MonoBehaviour
         {
             List<Sprite>[] directions = { skinDown, skinUp, skinSide };
             spriteRenderer.sprite = directions[ spriteIndex][Mathf.Clamp(skinIndex, 0, directions[spriteIndex].Count-1)];
-            Debug.Log(spriteRenderer.sprite);
         }
 
         parentSpriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
@@ -85,7 +84,7 @@ public class PlayerSpriteController : MonoBehaviour
         List<Sprite>[] directions = { skinDown, skinUp, skinSide };
         if (spriteRenderer.sprite != directions[spriteIndex][Mathf.Clamp(skinIndex, 0, directions[spriteIndex].Count - 1)])
         {
-            //Debug.Log(directions[spriteIndex][skinIndex]);
+            //.Log(directions[spriteIndex][skinIndex]);
         }
         spriteRenderer.sprite = directions[spriteIndex][Mathf.Clamp(skinIndex, 0, directions[spriteIndex].Count - 1)];
     }
