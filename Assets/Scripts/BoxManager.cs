@@ -106,6 +106,9 @@ public class BoxManager : MonoBehaviour
         playerBox = new int[] { 5, 5};
         currentSlider = 2;
         tempSlider = slidersArray[currentSlider ].GetComponent<Slider>();
+        slidersArray[0].GetComponent<Slider>().value = ddol.sfxVolume;
+        slidersArray[1].GetComponent<Slider>().value = ddol.musicVolume;
+        slidersArray[2].GetComponent<Slider>().value = ddol.mainVolume;
 
         curMap = 0;
         mapBorders[curMap].SetActive(true);
@@ -208,9 +211,9 @@ public class BoxManager : MonoBehaviour
             {
                 tempSlider.value = tempSlider.value + input.x;
 
-                ddol.mainVolume = slidersArray[0].GetComponent<Slider>().value;
+                ddol.mainVolume = slidersArray[2].GetComponent<Slider>().value;
                 ddol.musicVolume = slidersArray[1].GetComponent<Slider>().value;
-                ddol.sfxVolume = slidersArray[2].GetComponent<Slider>().value;
+                ddol.sfxVolume = slidersArray[0].GetComponent<Slider>().value;
             }
             lastFrameYMovement = input.y;
             //do slider stuff
@@ -381,6 +384,7 @@ public class BoxManager : MonoBehaviour
                 mapCurrentVelocity = Vector3.zero;
                 break;
             case 5:
+                ddol.ResetVariables();
                 mainMenu.LoadScene(mapIndex[curMap]); // make this change scenes depending on map
                 break;
             default:

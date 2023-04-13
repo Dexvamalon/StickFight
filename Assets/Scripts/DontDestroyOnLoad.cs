@@ -35,9 +35,9 @@ public class DontDestroyOnLoad : MonoBehaviour
     public bool player1Win;
     public int map;
 
-    public float mainVolume;
-    public float sfxVolume;
-    public float musicVolume;
+    public float mainVolume = 50;
+    public float sfxVolume = 50;
+    public float musicVolume = 50;
 
     #endregion
 

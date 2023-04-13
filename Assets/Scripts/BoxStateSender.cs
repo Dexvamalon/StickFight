@@ -13,10 +13,12 @@ public class BoxStateSender : MonoBehaviour
         if(other.tag == "Player1")
         {
             onPlayer?.Invoke(boxIndex, 0, true);
+            GetComponentInChildren<BoxSpriteFliper>()?.SetSprite(1);
         }
         else if (other.tag == "Player2")
         {
             onPlayer?.Invoke(boxIndex, 1, true);
+            GetComponentInChildren<BoxSpriteFliper>()?.SetSprite(1);
         }
     }
 
@@ -25,10 +27,12 @@ public class BoxStateSender : MonoBehaviour
         if (other.tag == "Player1")
         {
             onPlayer?.Invoke(boxIndex, 0, false);
+            GetComponentInChildren<BoxSpriteFliper>()?.SetSprite(0);
         }
         else if (other.tag == "Player2")
         {
             onPlayer?.Invoke(boxIndex, 1, false);
+            GetComponentInChildren<BoxSpriteFliper>()?.SetSprite(0);
         }
     }
 }

@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    private DontDestroyOnLoad ddol;
+
     void Awake()
     {
         if ( instance == null)
@@ -36,9 +38,25 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        foreach (Sound s in sounds)
+        {
+            if(s.name == "Music")
+            {
+                s.source.volume = s.volume * ddol.mainVolume/50 * ddol.musicVolume/50;
+            }
+            else
+            {
+                s.source.volume = s.volume * ddol.mainVolume/50 * ddol.sfxVolume/50;
+            }
+        }
+    }
+
     private void Start()
     {
         Play("Music");
+        ddol = FindObjectOfType<DontDestroyOnLoad>();
     }
 
     public void Play(string name)
